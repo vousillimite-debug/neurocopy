@@ -42,6 +42,11 @@ Propriétaire : Renaud. **Toujours lui répondre en français, simplement, sans 
 4. SEO technique : metadata, canonical, JSON-LD, sitemap, robots, redirections.
 5. Plus tard, après validation : auth, Stripe, outils branchés sur l'API Anthropic (serveur), app payante.
 
+## Prérequis de l'étape 5 (avant de brancher l'API Anthropic)
+- **Les compteurs de limitation de débit en mémoire ne fonctionnent pas sur Vercel** (serverless : chaque instance a sa propre mémoire). Il faut d'abord un **stockage partagé** (Upstash Redis ou Supabase) derrière  ().
+- **Renaud doit fixer un plafond de dépense mensuel sur la clé API Anthropic** avant tout branchement.
+- IP : ne faire confiance qu'à l'en-tête posé par l'hébergeur (x-forwarded-for est falsifiable hors proxy).
+
 ## Décisions de Renaud (12/11/2026)
 - **Mots interdits dans les articles** : la règle s'applique aussi au contenu, mais **ne modifier AUCUN texte** d'article. Préparer un rapport (slug + phrase) pour « solution » (seulement quand c'est un argument marketing creux), « tout-en-un » et le vouvoiement. Les corrections se font en base, page par page, après son accord.
 - **Liens internes vers 4 pages inexistantes** : proposer la page existante la plus proche, Renaud valide, puis redirection (jamais de lien mort publié).
@@ -81,6 +86,14 @@ Propriétaire : Renaud. **Toujours lui répondre en français, simplement, sans 
 - Sections : `line-height: normal` à la racine, comme les maquettes ; seuls les textes qui en précisent un le changent.
 - Témoignages : placeholders des maquettes conservés tels quels. Carrousel mobile en CSS (scroll-snap + `::scroll-marker`).
 - Contrôle visuel : `node scripts/compare.mjs http://localhost:3000 home` → pages entières + tranches.
+- Homepage validée et commitée. Textes sourcés : « environ 20 % » (Nielsen), Ogilvy « (traduction libre) », « d'après Sabri Suby ». Prix et garantie provisoires (pas de publication avant CGV + Stripe).
+- Outils : pages statiques (`src/app/analyser-email`, `src/app/testeur-accroche`), en-tête rendu serveur, formulaire en composant client (`src/components/tools/ToolApp.tsx`). Sans JavaScript : formulaire visible, bouton désactivé, exemple affiché.
+- Règles partagées navigateur/serveur : `src/lib/tools/config.ts`. **Minimum de mots** fixé par Renaud : 30 (email), 3 (accroche), affiché en chiffres.
+- Résultat : exemples des maquettes (`src/lib/tools/examples.ts`), toujours étiquetés « EXEMPLE ». Après une analyse, bandeau « Aperçu » tant que l'API n'est pas branchée.
+- Quota : 3 analyses d'email, compteur `nc:analyses-gratuites` en localStorage (un nombre, jamais le texte). Accroche sans quota (mais soumise à la limitation de débit : ne jamais écrire « sans limite » dans un texte neuf). Confort d'interface seulement : la vraie limite est côté serveur.
+- Route handlers : `POST /api/outils/analyser-email` et `/api/outils/testeur-accroche` → `src/lib/server/tool-handler.ts` (limitation de débit par IP en mémoire, validation, 503 tant que l'API n'est pas branchée, `Cache-Control: no-store`, aucun texte journalisé). Clé : `ANTHROPIC_API_KEY`, serveur uniquement (`src/lib/server/anthropic.ts`).
+- Aperçu des états : `?etat=quota|erreur|court|chargement|resultat` (lu dans le navigateur, page toujours statique).
+- Contrôle visuel des outils : `node scripts/compare.mjs http://localhost:3000 outil` (états empilés comme les maquettes).
 
 - Supabase : `supabase/migrations/20261112000000_pages.sql` (RLS : lecture des pages publiées seulement). Import : `node scripts/import-pages.mjs` (simulation) puis `--apply` avec `.env.local`.
 

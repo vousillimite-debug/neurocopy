@@ -10,8 +10,13 @@ export const routes = {
   connexion: "/connexion", // à créer (étape 3, statique)
   inscription: "/inscription", // à créer (étape 3, statique)
   outils: {
-    analyseurEmail: "/analyser-email", // à créer (étape 3)
-    testeurAccroche: "/testeur-accroche", // à créer (étape 3)
+    analyseurEmail: "/analyser-email",
+    testeurAccroche: "/testeur-accroche",
+  },
+  /** Route handlers serveur des outils gratuits (POST). */
+  api: {
+    analyserEmail: "/api/outils/analyser-email",
+    testeurAccroche: "/api/outils/testeur-accroche",
   },
   app: {
     analyser: "/analyser",
