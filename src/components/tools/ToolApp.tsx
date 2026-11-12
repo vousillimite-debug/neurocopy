@@ -261,7 +261,7 @@ function QuotaCard() {
             Créer mon compte gratuit →
           </Button>
           <Link href={routes.outils.testeurAccroche} className={s.quotaLink}>
-            Tester une accroche, sans limite
+            Tester une accroche, sans compte
           </Link>
         </div>
         <span className={s.quotaLogin}>

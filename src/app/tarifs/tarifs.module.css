@@ -1,0 +1,518 @@
+/* Tarifs — valeurs de design/Tarifs.dc.html (1440) et Tarifs-mobile.dc.html (390). Tokens uniquement. */
+
+.page {
+  line-height: normal;
+  padding-bottom: var(--nc-s-32);
+}
+
+/* ── Bascule mensuel / annuel sans JavaScript ─────
+   Deux boutons radio (sélection par valeur : les CSS Modules renomment les id) ; :has() affiche les prix et liens de la période choisie.
+   Sans :has() (vieux navigateurs), la période mensuelle reste affichée. */
+.monthly {
+  display: contents;
+}
+.annual {
+  display: none;
+}
+.page:has(input[name="periode"][value="annuel"]:checked) .monthly {
+  display: none;
+}
+.page:has(input[name="periode"][value="annuel"]:checked) .annual {
+  display: contents;
+}
+
+/* ── En-tête ───────────────────────────────────── */
+.header {
+  max-width: calc(900px + 2 * var(--nc-gutter));
+  margin: 0 auto;
+  padding: var(--nc-s-24) var(--nc-gutter) var(--nc-s-12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--nc-s-6);
+  text-align: center;
+}
+.h1 {
+  margin: 0;
+  font-size: 80px;
+  line-height: 0.96;
+  letter-spacing: var(--nc-ls-title);
+  font-weight: var(--nc-fw-black);
+}
+.second {
+  color: var(--nc-text-3);
+}
+.lead {
+  margin: 0;
+  max-width: 520px;
+  font-size: 18px;
+  line-height: 1.65;
+  color: var(--nc-text-2);
+}
+.toggle {
+  margin: 0;
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid var(--nc-border);
+  border-radius: var(--nc-r-pill);
+  background: var(--nc-bg-alt);
+}
+.radio {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+}
+.option {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--nc-s-2);
+  height: 44px;
+  padding: 0 22px;
+  border-radius: var(--nc-r-pill);
+  font-size: 15px;
+  font-weight: var(--nc-fw-semibold);
+  color: var(--nc-text-2);
+  cursor: pointer;
+}
+.option:hover {
+  color: var(--nc-text);
+}
+.radio:checked + .option {
+  background: var(--nc-text);
+  color: var(--nc-on-accent);
+}
+/* Badge lisible sur l'option sélectionnée (fond blanc) */
+.radio:checked + .option .discount {
+  background: var(--nc-on-accent);
+}
+.radio:focus-visible + .option {
+  outline: var(--nc-focus);
+  outline-offset: 2px;
+}
+.discount {
+  padding: 3px 7px;
+  border-radius: var(--nc-r-badge);
+  background: var(--nc-accent-soft);
+  color: var(--nc-accent);
+  font-family: var(--nc-mono);
+  font-size: 11px;
+}
+
+/* ── Plans ─────────────────────────────────────── */
+.plans {
+  max-width: calc(var(--nc-container) + 2 * var(--nc-gutter));
+  margin: 0 auto;
+  padding: var(--nc-s-4) var(--nc-gutter) 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--nc-s-4);
+  align-items: stretch;
+}
+.plan {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  padding: 28px;
+  border: 1px solid var(--nc-border);
+  border-radius: var(--nc-r-card);
+  background: var(--nc-card);
+}
+.featured {
+  padding: 27px;
+  border: 2px solid var(--nc-accent);
+}
+.badge {
+  position: absolute;
+  top: -13px;
+  left: 26px;
+  padding: 5px 10px;
+  border-radius: var(--nc-r-badge);
+  background: var(--nc-accent);
+  color: var(--nc-on-accent);
+  font-family: var(--nc-mono);
+  font-size: 11px;
+  font-weight: var(--nc-fw-semibold);
+  letter-spacing: 0.08em;
+}
+.planHead {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+.planName {
+  display: flex;
+  flex-direction: column;
+  gap: var(--nc-s-2);
+}
+.planTitle {
+  margin: 0;
+  font-size: var(--nc-fs-lead);
+  font-weight: var(--nc-fw-bold);
+}
+.audience {
+  font-size: var(--nc-fs-small);
+  line-height: 1.5;
+  color: var(--nc-text-2);
+}
+.priceBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.billing {
+  font-size: var(--nc-fs-small);
+  color: var(--nc-text-3);
+}
+.price {
+  font-size: 56px;
+  font-weight: var(--nc-fw-black);
+  letter-spacing: -0.05em;
+  line-height: 1;
+}
+.featured .price {
+  color: var(--nc-accent);
+}
+.per {
+  font-size: var(--nc-fs-small);
+  font-weight: var(--nc-fw-regular);
+  letter-spacing: 0;
+  color: var(--nc-text-3);
+}
+.cta {
+  display: flex;
+  flex-direction: column;
+}
+.ctaButton {
+  width: 100%;
+}
+.features {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--nc-s-3);
+  font-size: var(--nc-fs-small);
+  line-height: 1.45;
+  color: var(--nc-text-article);
+}
+.features li {
+  display: flex;
+  gap: 10px;
+}
+.featureIntro {
+  color: var(--nc-text);
+  font-weight: var(--nc-fw-semibold);
+}
+.check {
+  color: var(--nc-accent);
+}
+.mobileSummary {
+  font-size: var(--nc-fs-small);
+  color: var(--nc-text-2);
+}
+
+/* ── Sections larges ───────────────────────────── */
+.wide {
+  max-width: calc(var(--nc-container) + 2 * var(--nc-gutter));
+  margin: 0 auto;
+  padding-inline: var(--nc-gutter);
+}
+.h2 {
+  margin: 0;
+  font-size: 44px;
+  line-height: 1.05;
+  letter-spacing: var(--nc-ls-h2);
+  font-weight: var(--nc-fw-black);
+}
+
+/* ── Tableau comparatif ────────────────────────── */
+.compare {
+  padding-top: 112px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+.tableWrap {
+  overflow-x: auto;
+  border: 1px solid var(--nc-border);
+  border-radius: var(--nc-r-card);
+}
+.table {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+  font-size: 15px;
+  text-align: center;
+}
+.table thead tr {
+  border-bottom: 1px solid var(--nc-border);
+}
+.table thead th {
+  padding: var(--nc-s-5) var(--nc-s-4);
+  font-weight: var(--nc-fw-bold);
+}
+.table thead .colLabel {
+  padding: var(--nc-s-5) var(--nc-s-6);
+  text-align: left;
+  font-family: var(--nc-mono);
+  font-size: 11px;
+  letter-spacing: var(--nc-ls-micro);
+  font-weight: 500;
+  color: var(--nc-text-3);
+}
+.table tbody tr + tr {
+  border-top: 1px solid var(--nc-border-subtle);
+}
+.table tbody th {
+  padding: var(--nc-s-4) var(--nc-s-6);
+  text-align: left;
+  font-weight: 500;
+}
+.table td {
+  padding: var(--nc-s-4);
+}
+.table .hl {
+  background: var(--nc-card);
+}
+.table thead .hl {
+  color: var(--nc-accent);
+}
+.yes,
+.cellText {
+  color: var(--nc-accent);
+}
+.cellText {
+  font-family: var(--nc-mono);
+}
+.no {
+  color: var(--nc-text-3);
+}
+
+/* ── Garantie ──────────────────────────────────── */
+.guaranteeWrap {
+  padding-top: var(--nc-s-16);
+}
+.guarantee {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--nc-s-8);
+  padding: 36px var(--nc-s-10);
+  border: 1px solid var(--nc-border);
+  border-radius: var(--nc-r-card);
+  background: var(--nc-bg-alt);
+}
+.guaranteeDays {
+  display: flex;
+  align-items: baseline;
+  gap: var(--nc-s-2);
+}
+.guaranteeNum {
+  font-size: var(--nc-fs-display);
+  font-weight: var(--nc-fw-black);
+  letter-spacing: -0.06em;
+  line-height: 0.9;
+  color: var(--nc-accent);
+}
+.guaranteeUnit {
+  font-family: var(--nc-mono);
+  font-size: var(--nc-fs-small);
+  color: var(--nc-text-2);
+}
+.guaranteeText {
+  flex: 1 1 400px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--nc-s-2);
+}
+.guaranteeTitle {
+  font-size: 26px;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+.guaranteeBody {
+  font-size: var(--nc-fs-body);
+  line-height: 1.6;
+  color: var(--nc-text-2);
+}
+
+/* ── FAQ ───────────────────────────────────────── */
+.faq {
+  max-width: calc(760px + 2 * var(--nc-gutter));
+  margin: 0 auto;
+  padding: 112px var(--nc-gutter) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--nc-s-6);
+}
+
+/* ══ Mobile (< 768 px) ═════════════════════════════ */
+@media (max-width: 767px) {
+  .page {
+    padding-bottom: 56px;
+  }
+  .header {
+    align-items: stretch;
+    gap: var(--nc-s-4);
+    padding: var(--nc-s-12) var(--nc-gutter) 28px;
+    text-align: start;
+  }
+  .h1 {
+    font-size: 44px;
+    line-height: 0.98;
+  }
+  .option {
+    flex: 1;
+    gap: 6px;
+    padding: 0;
+  }
+  .discount {
+    padding: 2px 6px;
+    font-size: 10px;
+  }
+
+  /* Plans : Growth d'abord, cartes compactes */
+  .plans {
+    display: flex;
+    flex-direction: column;
+    padding-top: var(--nc-s-3);
+  }
+  .order-growth {
+    order: -1;
+  }
+  .order-free {
+    order: 1;
+  }
+  .plan {
+    gap: var(--nc-s-3);
+    padding: var(--nc-s-5);
+  }
+  .featured {
+    gap: var(--nc-s-4);
+    padding: 26px var(--nc-s-5) 22px;
+  }
+  .badge {
+    top: -12px;
+    left: var(--nc-s-5);
+    padding: 4px 9px;
+    font-size: 10px;
+  }
+  .planHead {
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+  .planTitle {
+    font-size: 18px;
+  }
+  .featured .planTitle {
+    font-size: var(--nc-fs-lead);
+  }
+  .price {
+    font-size: 32px;
+    line-height: normal;
+  }
+  .featured .price {
+    font-size: 44px;
+  }
+  .per {
+    font-size: 13px;
+  }
+  .features {
+    gap: 10px;
+    line-height: normal;
+  }
+  .featured .cta {
+    order: 1;
+  }
+  .featured .ctaButton {
+    min-height: var(--nc-control-h-lg);
+    font-size: var(--nc-fs-body);
+  }
+
+  .h2 {
+    font-size: 30px;
+    line-height: 1.08;
+  }
+
+  /* Tableau : compact, tient en 358 px */
+  .compare {
+    padding-top: 56px;
+    gap: var(--nc-s-4);
+  }
+  .table {
+    min-width: 0;
+    font-size: 13px;
+  }
+  .table thead th {
+    padding: var(--nc-s-3) 4px;
+  }
+  .table thead .colLabel,
+  .table tbody th {
+    padding: var(--nc-s-3);
+  }
+  .table thead .colLabel {
+    font-size: 10px;
+    letter-spacing: normal;
+  }
+  .table td {
+    padding: 0;
+  }
+
+  .guaranteeWrap {
+    padding-top: var(--nc-s-8);
+  }
+  .guarantee {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding: var(--nc-s-6) var(--nc-s-5);
+  }
+  .guaranteeNum {
+    font-size: 72px;
+  }
+  .guaranteeUnit {
+    font-size: 13px;
+  }
+  .guaranteeText {
+    flex: none;
+    gap: 10px;
+  }
+  .guaranteeTitle {
+    font-size: var(--nc-fs-lead);
+    letter-spacing: -0.02em;
+    line-height: normal;
+  }
+  .guaranteeBody {
+    font-size: 15px;
+  }
+
+  .faq {
+    padding-top: 56px;
+    gap: 14px;
+  }
+}
+
+/* ══ Affichage desktop / mobile (en dernier) ══ */
+.mOnly,
+.mOnlyBlock {
+  display: none;
+}
+@media (max-width: 767px) {
+  .dOnly,
+  .dOnlyBlock {
+    display: none;
+  }
+  .mOnly {
+    display: inline;
+  }
+  .mOnlyBlock {
+    display: block;
+  }
+}

@@ -61,6 +61,8 @@ const CASES = [
     1600,
     true,
   ],
+  ["tarifs-desktop", "/tarifs", "Tarifs.dc.html", 1440, 1900, false],
+  ["tarifs-mobile", "/tarifs", "Tarifs-mobile.dc.html", 390, 1600, false],
   // Pas de maquette mobile de l'analyseur d'email : comparé au testeur d'accroche mobile.
   ["outil-email-mobile", "/analyser-email?etat=resultat", "Outil-mobile.dc.html", 390, 1800, true],
 ];

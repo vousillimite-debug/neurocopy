@@ -37,7 +37,9 @@ export const routes = {
   },
 } as const;
 
-/** Inscription avec un plan présélectionné (lu plus tard par la page d'inscription). */
-export function signupFor(plan: string): string {
-  return `${routes.inscription}?plan=${encodeURIComponent(plan)}`;
+/** Inscription avec un plan (et une période) présélectionnés, lus plus tard par la page d'inscription. */
+export function signupFor(plan: string, periode?: "mensuel" | "annuel"): string {
+  const q = new URLSearchParams({ plan });
+  if (periode) q.set("periode", periode);
+  return `${routes.inscription}?${q}`;
 }

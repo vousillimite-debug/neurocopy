@@ -43,7 +43,7 @@ Propriétaire : Renaud. **Toujours lui répondre en français, simplement, sans 
 5. Plus tard, après validation : auth, Stripe, outils branchés sur l'API Anthropic (serveur), app payante.
 
 ## Prérequis de l'étape 5 (avant de brancher l'API Anthropic)
-- **Les compteurs de limitation de débit en mémoire ne fonctionnent pas sur Vercel** (serverless : chaque instance a sa propre mémoire). Il faut d'abord un **stockage partagé** (Upstash Redis ou Supabase) derrière  ().
+- **Les compteurs de limitation de débit en mémoire ne fonctionnent pas sur Vercel** (serverless : chaque instance a sa propre mémoire). Il faut d'abord un **stockage partagé** (Upstash Redis ou Supabase) derrière `rateLimit()` (`src/lib/server/rate-limit.ts`).
 - **Renaud doit fixer un plafond de dépense mensuel sur la clé API Anthropic** avant tout branchement.
 - IP : ne faire confiance qu'à l'en-tête posé par l'hébergeur (x-forwarded-for est falsifiable hors proxy).
 
@@ -94,6 +94,9 @@ Propriétaire : Renaud. **Toujours lui répondre en français, simplement, sans 
 - Route handlers : `POST /api/outils/analyser-email` et `/api/outils/testeur-accroche` → `src/lib/server/tool-handler.ts` (limitation de débit par IP en mémoire, validation, 503 tant que l'API n'est pas branchée, `Cache-Control: no-store`, aucun texte journalisé). Clé : `ANTHROPIC_API_KEY`, serveur uniquement (`src/lib/server/anthropic.ts`).
 - Aperçu des états : `?etat=quota|erreur|court|chargement|resultat` (lu dans le navigateur, page toujours statique).
 - Contrôle visuel des outils : `node scripts/compare.mjs http://localhost:3000 outil` (états empilés comme les maquettes).
+- Outils validés et commités. Lead du testeur d'accroche : « Sans inscription, sans carte bancaire. »
+- Tarifs (`src/app/tarifs`) : bascule mensuel/annuel **sans JavaScript** (boutons radio + `:has()`, sélection par `value` car les CSS Modules renomment les id). Prix annuels « [N] € » tant que la remise n'est pas fixée (`annualMonthlyPrice: null`). Liens : `/inscription?plan=…&periode=…` (`signupFor`). Tableau comparatif et cartes alimentés par `src/lib/plans.ts`. Placeholders conservés : [N], [−X %], [RÈGLE DE DÉCOMPTE À CONFIRMER], [REMISE À CONFIRMER].
+- Shell : ne jamais mettre d'accents graves (backticks) dans un `node -e "…"` en Bash (exécutés comme commandes). Utiliser Edit/Write.
 
 - Supabase : `supabase/migrations/20261112000000_pages.sql` (RLS : lecture des pages publiées seulement). Import : `node scripts/import-pages.mjs` (simulation) puis `--apply` avec `.env.local`.
 
