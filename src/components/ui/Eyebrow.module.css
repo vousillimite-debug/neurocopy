@@ -28,3 +28,14 @@
 .muted {
   color: var(--nc-text-3);
 }
+
+/* Mobile : en-têtes de section en 11 px, point de 7 px (maquettes mobiles) */
+@media (max-width: 767px) {
+  .dot {
+    font-size: 11px;
+  }
+  .dot .pip {
+    width: 7px;
+    height: 7px;
+  }
+}

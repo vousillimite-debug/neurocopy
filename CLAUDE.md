@@ -74,6 +74,14 @@ Propriétaire : Renaud. **Toujours lui répondre en français, simplement, sans 
 - Avant/après et sources : composants prêts, mais aucune donnée structurée dans le CSV → non affichés.
 - Contrôle visuel : `node scripts/compare.mjs http://localhost:3000` → `screenshots/compare-*.png`.
 - JSON-LD : `<JsonLd>` (`src/components/seo/JsonLd.tsx`) est le seul endroit qui sérialise.
+## Choix techniques (étape 3)
+- Outils : `/analyser-email` et `/testeur-accroche` (adresses données par Renaud), dans `src/lib/routes.ts`.
+- Plans et prix : `src/lib/plans.ts`, source unique pour la homepage et /tarifs (prix des maquettes, à confirmer).
+- Homepage `src/app/page.tsx` + `home.module.css` : un seul HTML pour desktop et mobile. Les raccourcis mobiles des maquettes passent par `.dOnly` / `.mOnly`. Les titres absents des maquettes mobiles sont masqués visuellement mais gardés pour l'accessibilité. FAQ : texte desktop partout, sans doublon.
+- Sections : `line-height: normal` à la racine, comme les maquettes ; seuls les textes qui en précisent un le changent.
+- Témoignages : placeholders des maquettes conservés tels quels. Carrousel mobile en CSS (scroll-snap + `::scroll-marker`).
+- Contrôle visuel : `node scripts/compare.mjs http://localhost:3000 home` → pages entières + tranches.
+
 - Supabase : `supabase/migrations/20261112000000_pages.sql` (RLS : lecture des pages publiées seulement). Import : `node scripts/import-pages.mjs` (simulation) puis `--apply` avec `.env.local`.
 
 ## Notes sur les données (diagnostic)

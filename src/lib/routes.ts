@@ -5,12 +5,13 @@
 export const routes = {
   home: "/",
   methode: "/#methode",
+  demo: "/#demo",
   tarifs: "/tarifs", // à créer (étape 3)
-  connexion: "/connexion", // à créer (étape 5)
-  inscription: "/inscription", // à créer (étape 5)
+  connexion: "/connexion", // à créer (étape 3, statique)
+  inscription: "/inscription", // à créer (étape 3, statique)
   outils: {
-    analyseurEmail: "/outils/analyseur-email", // à créer (étape 3)
-    testeurAccroche: "/outils/testeur-accroche", // à créer (étape 3)
+    analyseurEmail: "/analyser-email", // à créer (étape 3)
+    testeurAccroche: "/testeur-accroche", // à créer (étape 3)
   },
   app: {
     analyser: "/analyser",
@@ -30,3 +31,8 @@ export const routes = {
     cgv: "/cgv", // à créer
   },
 } as const;
+
+/** Inscription avec un plan présélectionné (lu plus tard par la page d'inscription). */
+export function signupFor(plan: string): string {
+  return `${routes.inscription}?plan=${encodeURIComponent(plan)}`;
+}
