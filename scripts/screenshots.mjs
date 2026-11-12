@@ -22,7 +22,14 @@ const VIEWPORTS = { desktop: { width: 1440, height: 900 }, mobile: { width: 390,
 const PAGES = [
   ["home", "/", "Home.dc.html", "Home-mobile.dc.html"],
   ["styleguide", "/styleguide", null, null],
+  // Pas de maquette pilier mobile : on compare au satellite mobile.
+  ["pilier", "/biais-cognitifs", "Article-pilier.dc.html", "Article-mobile.dc.html"],
+  ["satellite", "/biais-cognitifs/reciprocite", "Article-satellite.dc.html", "Article-mobile.dc.html"],
 ];
+
+// Filtre optionnel : node scripts/screenshots.mjs http://localhost:3000 pilier,satellite
+const only = process.argv[3]?.split(",");
+if (only) PAGES.splice(0, PAGES.length, ...PAGES.filter(([n]) => only.includes(n)));
 
 const browser = await chromium.launch();
 

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { BeforeAfter } from "@/components/article/BeforeAfter";
 import { SiteShell } from "@/components/layout/SiteShell";
 import { Accordion, AccordionItem } from "@/components/ui/Accordion";
 import { ArrowLink } from "@/components/ui/ArrowLink";
@@ -165,6 +166,23 @@ export default function StyleguidePage() {
             <span className={styles.cardBig}>vérifie ta grammaire.</span>
           </Card>
         </div>
+      </Section>
+
+      <Section labelledBy="sg-ba" gap="md">
+        <h2 id="sg-ba" className="nc-sr-only">
+          Avant / après
+        </h2>
+        <Block title="Bloc avant / après (en attente de données dans le CSV)">
+          <div className={styles.measure}>
+            <BeforeAfter
+              context="Exemple"
+              before="[Texte avant]"
+              after="[Texte après]"
+              bias="[Biais]"
+              source="[Auteur, année]"
+            />
+          </div>
+        </Block>
       </Section>
 
       <Section labelledBy="sg-faq" gap="md">

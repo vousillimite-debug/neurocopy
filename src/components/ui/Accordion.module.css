@@ -44,9 +44,32 @@
   margin-top: var(--nc-s-3);
 }
 
+/* Variante article */
+.article .summary {
+  padding: var(--nc-s-5) 0;
+}
+.article .q {
+  font-size: 18px;
+}
+.article .answer {
+  padding-bottom: var(--nc-s-5);
+}
+
 @media (max-width: 767px) {
-  .summary {
-    padding: var(--nc-s-4) 0;
+  .summary,
+  .article .summary {
+    padding: 0;
+    gap: var(--nc-s-3);
+  }
+  .plus {
+    font-size: 22px;
+  }
+  .article .q {
+    font-size: var(--nc-fs-body);
+  }
+  .article .answer {
+    padding-bottom: var(--nc-s-4);
+    font-size: 15px;
   }
   .q {
     font-size: 17px;

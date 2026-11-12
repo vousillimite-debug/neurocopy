@@ -25,6 +25,7 @@ export function AccordionItem({ question, children, open, headingLevel }: ItemPr
   );
 }
 
-export function Accordion({ children }: { children: ReactNode }) {
-  return <div className={styles.list}>{children}</div>;
+/** size : « page » (homepage, 19 px) ou « article » (18 px, plus serré). */
+export function Accordion({ children, size = "page" }: { children: ReactNode; size?: "page" | "article" }) {
+  return <div className={`${styles.list} ${size === "article" ? styles.article : ""}`}>{children}</div>;
 }

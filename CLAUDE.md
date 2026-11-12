@@ -47,6 +47,10 @@ Propriétaire : Renaud. **Toujours lui répondre en français, simplement, sans 
 - **Liens internes vers 4 pages inexistantes** : proposer la page existante la plus proche, Renaud valide, puis redirection (jamais de lien mort publié).
 - **Pilier mobile** : pas de maquette ; construire à partir du satellite mobile + pilier desktop. Maquette à venir.
 - **4 satellites sans breadcrumb / schema_extra, et faq_schema vide** : générer à partir de slug, cocon et faq.
+- **Étape 2 validée** : CTA (/analyser → analyseur ; /rediger, /comparer → tarifs), « Par Renaud, diplômé en psychologie » (exact), fil d'Ariane sans « Ressources », cartes avec libellé court.
+- **JSON-LD BreadcrumbList = fil d'Ariane affiché**, construit depuis la même liste (`src/lib/jsonld.ts`). Le breadcrumb du CSV n'est pas utilisé pour le rendu.
+- **Colonnes `exemples` et `sources`** : nullables, vides. **Ne JAMAIS inventer d'exemple ni de référence** : Renaud les saisit page par page avec vérification des sources. L'import ne les envoie jamais.
+- **Étape 3, une sous-étape à la fois, validation entre chaque** : homepage → outils (/analyser-email avec états quota, erreur, texte trop court ; /testeur-accroche) → tarifs → connexion/inscription (statiques, sans auth). Outils statiques : aucun appel d'API, seulement la structure des futurs route handlers. Captures 1440 et 390 vs maquettes pour chaque écran.
 
 ## Choix techniques (étape 1)
 - Next.js 16.4.x (≥ 16.4.1 obligatoire : failles critiques avant), React 19, TypeScript 5.9 (pas la 7).
@@ -57,6 +61,20 @@ Propriétaire : Renaud. **Toujours lui répondre en français, simplement, sans 
 - Points de rupture : mobile < 768 px ; nav burger < 960 px.
 - Adresses internes centralisées dans `src/lib/routes.ts`. URL du site dans `src/lib/site.ts` (`SITE_URL`).
 - `/styleguide` : page interne non indexée qui montre tous les composants.
+
+## Choix techniques (étape 2 : articles)
+- Route catch-all `src/app/[...slug]/page.tsx`, `dynamicParams = false` : 147 pages générées au build, le reste en 404.
+- Données : `src/lib/content.ts` (lecture du CSV au build, `server-only`, csv-parse ≥ 7.0.2). Clé `body` → `contenu` harmonisée à la lecture (59 sections).
+- Présentation : `src/lib/article.ts`. H1 découpé sur « — » / « : » (ligne 2 grise, dernier mot en jaune), texte inchangé.
+- Pilier de rattachement : fil d'Ariane position 2 → lien interne vers un pilier du même cocon → pilier unique du cocon.
+- CTA : placé avant la dernière section. Chemins du CSV mappés dans `ctaTarget()` : /analyser → analyseur d'email gratuit ; /rediger, /comparer → tarifs (en attendant l'app).
+- Note de l'auteur : milieu d'article (pilier), fin avec eyebrow (satellite).
+- Liens internes : redirections appliquées au rendu, cibles inexistantes écartées.
+- Sommaire : latéral ≥ 960 px (progression en CSS `animation-timeline`, item actif via `TocSpy`, amélioration progressive), `<details>` en dessous.
+- Avant/après et sources : composants prêts, mais aucune donnée structurée dans le CSV → non affichés.
+- Contrôle visuel : `node scripts/compare.mjs http://localhost:3000` → `screenshots/compare-*.png`.
+- JSON-LD : `<JsonLd>` (`src/components/seo/JsonLd.tsx`) est le seul endroit qui sérialise.
+- Supabase : `supabase/migrations/20261112000000_pages.sql` (RLS : lecture des pages publiées seulement). Import : `node scripts/import-pages.mjs` (simulation) puis `--apply` avec `.env.local`.
 
 ## Notes sur les données (diagnostic)
 - Contenu en texte brut : paragraphes séparés par une ligne vide, pas de HTML ni de Markdown.
