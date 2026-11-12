@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>App — Écouter verrouillé</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#000000}
+a{color:#E8FF47}a:hover{color:#F4FFA3}
+:focus-visible{outline:2px solid #E8FF47;outline-offset:3px}
+</style>
+</helmet>
+<div style="position: relative; width: 1440px; height: 1000px; overflow: hidden; background: #000000; color: #FFFFFF; font-family: Inter, system-ui, sans-serif; display: flex">
+
+<aside aria-hidden="true" style="flex: 0 0 264px; border-right: 1px solid #2A2A2A; background: #0A0A0A; padding: 20px 16px; box-sizing: border-box; display: flex; flex-direction: column; gap: 28px">
+<span style="display: flex; align-items: center; gap: 8px; font-weight: 800; font-size: 18px; padding: 6px 8px"><span style="width: 10px; height: 10px; border-radius: 999px; background: #E8FF47"></span>NeuroCopy</span>
+<div style="display: flex; flex-direction: column; gap: 4px; font-size: 15px">
+<span style="display: flex; align-items: center; min-height: 44px; padding: 0 12px; color: #AAAAAA">Analyser</span>
+<span style="display: flex; align-items: center; min-height: 44px; padding: 0 12px; color: #AAAAAA">Corriger</span>
+<span style="display: flex; align-items: center; min-height: 44px; padding: 0 12px; color: #AAAAAA">Rédiger</span>
+<span style="display: flex; align-items: center; min-height: 44px; padding: 0 12px; color: #858585">Comparer</span>
+<span style="display: flex; align-items: center; justify-content: space-between; min-height: 44px; padding: 0 12px; border-radius: 8px; background: #1A1A1A; color: #FFFFFF; font-weight: 600">Écouter<span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #AAAAAA">GROWTH</span></span>
+</div>
+</aside>
+<div aria-hidden="true" style="flex: 1; padding: 32px; display: flex; flex-direction: column; gap: 16px">
+<div style="height: 56px; border-bottom: 1px solid #2A2A2A"></div>
+<div style="display: flex; gap: 16px; flex: 1"><div style="flex: 1; border: 1px solid #2A2A2A; border-radius: 8px; background: #111111"></div><div style="flex: 1; border: 1px solid #2A2A2A; border-radius: 8px; background: #111111"></div></div>
+</div>
+
+<div style="position: absolute; inset: 0; background: rgba(0,0,0,0.78); display: flex; align-items: center; justify-content: center">
+<div role="dialog" aria-modal="true" aria-labelledby="verrou-t" style="position: relative; width: 560px; box-sizing: border-box; border: 1px solid #474747; border-radius: 12px; background: #111111; padding: 40px; display: flex; flex-direction: column; gap: 24px; box-shadow: 0 40px 120px rgba(0,0,0,0.6)">
+<button type="button" aria-label="Fermer" style="position: absolute; top: 16px; right: 16px; width: 44px; height: 44px; border-radius: 999px; border: 1px solid #2A2A2A; background: transparent; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#AAAAAA" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+<div style="display: flex; align-items: center; gap: 10px; font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.16em; color: #AAAAAA"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#E8FF47" stroke-width="2.2" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg>ÉCOUTER · PLAN GROWTH</div>
+<h2 id="verrou-t" style="margin: 0; font-size: 40px; line-height: 1.04; letter-spacing: -0.04em; font-weight: 800">Disponible avec Growth.<br><span style="color: #858585">Écoute ton <span style="color: #E8FF47">marché.</span></span></h2>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.16em; color: #858585">CE QUE ÇA CHANGE POUR TOI</span>
+<ul style="margin: 8px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 14px; font-size: 16px; line-height: 1.5">
+<li style="display: flex; gap: 12px"><span aria-hidden="true" style="color: #E8FF47">✓</span><span>Tu écris avec les mots de tes clients, pas avec les tiens.</span></li>
+<li style="display: flex; gap: 12px"><span aria-hidden="true" style="color: #E8FF47">✓</span><span>Tu vois leurs peurs, leurs frustrations et leurs désirs. Sourcés : Reddit, forums, avis Amazon.</span></li>
+<li style="display: flex; gap: 12px"><span aria-hidden="true" style="color: #E8FF47">✓</span><span>Tu débloques aussi Comparer et l'Offre irrésistible.</span></li>
+</ul>
+</div>
+<div style="display: flex; align-items: baseline; gap: 10px; padding: 16px 0; border-top: 1px solid #2A2A2A; border-bottom: 1px solid #2A2A2A"><span style="font-size: 40px; font-weight: 800; letter-spacing: -0.05em; color: #E8FF47">49 €</span><span style="font-size: 14px; color: #AAAAAA">/mois · au prorata de ton plan Solo · garantie 30 jours</span></div>
+<div style="display: flex; align-items: center; gap: 20px">
+<a href="#" style="display: inline-flex; align-items: center; height: 52px; padding: 0 26px; border-radius: 999px; background: #E8FF47; color: #000000; text-decoration: none; font-weight: 700; font-size: 16px">Passer à Growth →</a>
+<button type="button" style="min-height: 44px; padding: 0 8px; border: 0; background: transparent; color: #AAAAAA; font-family: inherit; font-size: 15px; font-weight: 600; cursor: pointer">Plus tard</button>
+</div>
+</div>
+</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1000}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

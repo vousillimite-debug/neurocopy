@@ -1,0 +1,44 @@
+.card {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  border: 1px solid var(--nc-border);
+  border-radius: var(--nc-r-card);
+}
+
+.standard {
+  background: var(--nc-card);
+}
+.accent {
+  background: var(--nc-card);
+  border-color: var(--nc-accent);
+}
+.alt {
+  background: var(--nc-bg-alt);
+}
+.ghost {
+  background: transparent;
+}
+
+.sm {
+  padding: 28px;
+}
+.md {
+  padding: var(--nc-s-8);
+}
+.lg {
+  padding: 36px;
+}
+.xl {
+  padding: var(--nc-s-12) var(--nc-s-10);
+}
+
+@media (max-width: 767px) {
+  .sm,
+  .md,
+  .lg,
+  .xl {
+    padding: var(--nc-s-6);
+  }
+}

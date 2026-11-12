@@ -1,0 +1,48 @@
+.block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--nc-s-4);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--nc-s-4);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--nc-s-4);
+}
+
+.cardTitle {
+  font-size: 22px;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+.cardText {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--nc-text-2);
+}
+
+.cardMuted {
+  font-size: 18px;
+  font-weight: var(--nc-fw-semibold);
+  color: var(--nc-text-3);
+}
+
+.cardBig {
+  font-size: 30px;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  font-weight: var(--nc-fw-bold);
+  color: var(--nc-text-2);
+}
+
+.measure {
+  max-width: 880px;
+}

@@ -1,0 +1,157 @@
+.footer {
+  border-top: 1px solid var(--nc-border);
+  background: var(--nc-bg);
+}
+
+.inner {
+  max-width: calc(var(--nc-container) + 2 * var(--nc-gutter));
+  margin: 0 auto;
+  padding-inline: var(--nc-gutter);
+}
+
+.signature {
+  flex: 1 1 260px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--nc-s-3);
+}
+
+.tagline {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--nc-text-2);
+}
+
+/* ── Complet ─────────────────────────────── */
+.fullInner {
+  padding-block: var(--nc-s-16) var(--nc-s-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--nc-s-10);
+}
+
+.top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--nc-s-10);
+}
+
+.columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 56px;
+  font-size: var(--nc-fs-small);
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.colTitle {
+  font-family: var(--nc-mono);
+  font-size: 11px;
+  letter-spacing: var(--nc-ls-micro);
+  color: var(--nc-text-3);
+}
+
+.colLink,
+.colLink:hover {
+  color: var(--nc-text-2);
+  text-decoration: none;
+}
+.colLink:hover {
+  color: var(--nc-text);
+}
+
+.bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--nc-s-3);
+  padding-top: var(--nc-s-6);
+  border-top: 1px solid var(--nc-border);
+  font-size: 13px;
+  color: var(--nc-text-3);
+}
+
+.legal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--nc-s-5);
+}
+.legal a,
+.compactLegal a {
+  color: var(--nc-text-3);
+}
+.legal a:hover,
+.compactLegal a:hover {
+  color: var(--nc-text);
+}
+
+/* ── Compact ─────────────────────────────── */
+.compactInner {
+  padding-block: var(--nc-s-12) var(--nc-s-8);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--nc-s-5);
+}
+
+.compactLegal {
+  align-self: flex-end;
+  font-size: 13px;
+  color: var(--nc-text-3);
+}
+
+/* ── Minimal (auth) ──────────────────────── */
+.minimal {
+  padding: var(--nc-s-6) var(--nc-s-8);
+  border-top: 1px solid var(--nc-border);
+  font-size: 13px;
+  color: var(--nc-text-3);
+}
+
+/* ── Mobile ──────────────────────────────── */
+@media (max-width: 767px) {
+  .fullInner {
+    padding-block: var(--nc-s-10) var(--nc-s-8);
+    gap: 28px;
+  }
+  .top {
+    flex-direction: column;
+    gap: 28px;
+  }
+  .signature {
+    flex: none;
+    gap: 10px;
+  }
+  .tagline {
+    font-size: var(--nc-fs-small);
+  }
+  .columns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--nc-s-6);
+  }
+  .colTitle {
+    font-size: 10px;
+  }
+  .bottom {
+    padding-top: var(--nc-s-5);
+    font-size: var(--nc-fs-micro);
+  }
+  .compactInner {
+    flex-direction: column;
+    padding-block: var(--nc-s-10) var(--nc-s-8);
+  }
+  .compactLegal {
+    align-self: flex-start;
+    font-size: var(--nc-fs-micro);
+  }
+  .minimal {
+    padding: var(--nc-s-5) var(--nc-gutter-mobile);
+  }
+}

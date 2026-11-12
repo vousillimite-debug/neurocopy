@@ -1,0 +1,42 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border-radius: var(--nc-r-badge);
+  font-family: var(--nc-mono);
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+.bias {
+  padding: 5px 9px;
+  background: var(--nc-accent-soft);
+  color: var(--nc-accent);
+  font-size: var(--nc-fs-micro);
+  font-weight: var(--nc-fw-semibold);
+}
+
+.source {
+  padding: 4px 8px;
+  border: 1px solid var(--nc-border);
+  color: var(--nc-text-2);
+  font-size: 11px;
+}
+
+.plan {
+  padding: 3px 6px;
+  border: 1px solid var(--nc-border);
+  color: var(--nc-text-2);
+  font-size: 10px;
+  letter-spacing: 0.04em;
+}
+
+.filled {
+  padding: 5px 10px;
+  background: var(--nc-accent);
+  color: var(--nc-on-accent);
+  font-size: 11px;
+  font-weight: var(--nc-fw-semibold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}

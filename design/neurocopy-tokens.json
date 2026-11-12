@@ -1,0 +1,38 @@
+{
+  "$version": "1.1",
+  "color": {
+    "bg": { "base": "#000000", "alt": "#0A0A0A", "card": "#111111", "cardActive": "#1A1A1A", "disabled": "#1C1C1C", "overlay": "rgba(0,0,0,0.78)" },
+    "border": { "default": "#2A2A2A", "subtle": "#1F1F1F", "strong": "#474747" },
+    "accent": { "base": "#E8FF47", "hover": "#F4FFA3", "on": "#000000", "soft": "rgba(232,255,71,0.12)" },
+    "text": { "primary": "#FFFFFF", "article": "#D6D6D6", "secondary": "#AAAAAA", "tertiary": "#858585", "decor": "#666666" },
+    "status": {
+      "success": { "base": "#5FD38D", "soft": "rgba(95,211,141,0.14)", "rule": "score >= 75", "scope": "app" },
+      "warning": { "base": "#FF9F43", "soft": "rgba(255,159,67,0.14)", "rule": "50 <= score < 75", "scope": "app" },
+      "error":   { "base": "#FF6B6B", "soft": "rgba(255,107,107,0.14)", "rule": "score < 50", "scope": "app" }
+    }
+  },
+  "space": { "1": 4, "2": 8, "3": 12, "4": 16, "5": 20, "6": 24, "8": 32, "10": 40, "12": 48, "16": 64, "24": 96, "32": 128 },
+  "layout": { "container": 1200, "measure": 700, "toc": 240, "gutter": 24, "gutterMobile": 16, "sectionY": 128, "sectionYMobile": 72, "desktop": 1440, "mobile": 390 },
+  "radius": { "badge": 4, "card": 8, "window": 12, "sheet": 16, "pill": 999 },
+  "font": {
+    "family": { "sans": "Inter, system-ui, sans-serif", "mono": "JetBrains Mono, ui-monospace, monospace" },
+    "size": {
+      "hero":      { "desktop": 112, "mobile": 48 },
+      "display":   { "desktop": 96,  "mobile": 44 },
+      "h1":        { "desktop": 72,  "mobile": 40 },
+      "h2":        { "desktop": 56,  "mobile": 34 },
+      "h2Article": { "desktop": 36,  "mobile": 27 },
+      "h3":        { "desktop": 24,  "mobile": 18 },
+      "lead":      { "desktop": 20,  "mobile": 17 },
+      "article":   { "desktop": 19,  "mobile": 17 },
+      "body": 16, "small": 14, "micro": 12,
+      "score":     { "tool": 168, "toolMobile": 120, "app": 42 }
+    },
+    "lineHeight": { "tight": 0.95, "title": 1.05, "body": 1.6, "article": 1.75 },
+    "letterSpacing": { "title": "-0.045em", "h2": "-0.035em", "micro": "0.16em" },
+    "weight": { "regular": 400, "semibold": 600, "bold": 700, "black": 800 }
+  },
+  "control": { "height": 52, "heightLarge": 56, "heightMin": 44 },
+  "motion": { "ease": "cubic-bezier(.2,.7,.2,1)", "duration": 600, "durationFast": 200 },
+  "focus": { "outline": "2px solid #E8FF47", "offset": 3 }
+}

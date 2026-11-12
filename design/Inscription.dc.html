@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Créer un compte — NeuroCopy</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#000000}
+a{color:#E8FF47}a:hover{color:#F4FFA3}
+:focus-visible{outline:2px solid #E8FF47;outline-offset:3px}
+input[type=checkbox]{accent-color:#E8FF47}
+</style>
+</helmet>
+<div style="background: #000000; color: #FFFFFF; font-family: Inter, system-ui, sans-serif; min-height: 100vh; display: flex; flex-direction: column">
+<header style="padding: 20px 32px"><a href="#" style="display: inline-flex; align-items: center; gap: 8px; color: #FFFFFF; text-decoration: none; font-weight: 800; font-size: 18px; letter-spacing: -0.03em"><span style="width: 10px; height: 10px; border-radius: 999px; background: #E8FF47"></span>NeuroCopy</a></header>
+<main style="flex: 1; max-width: 1100px; width: 100%; margin: 0 auto; padding: 40px 24px 80px; box-sizing: border-box; display: flex; flex-wrap: wrap; align-items: center; gap: 64px">
+<div style="flex: 1 1 420px; display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; align-items: center; gap: 10px; font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.16em; color: #AAAAAA"><span style="width: 8px; height: 8px; border-radius: 999px; background: #E8FF47"></span>CRÉER UN COMPTE</div>
+<h1 style="margin: 0; font-size: 64px; line-height: 0.98; letter-spacing: -0.045em; font-weight: 800">Crée ton compte.<br><span style="color: #858585">Ton prochain texte <span style="color: #E8FF47">mérite</span> mieux.</span></h1>
+<ul style="margin: 8px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 16px; color: #D6D6D6">
+<li style="display: flex; gap: 10px"><span aria-hidden="true" style="color: #E8FF47">✓</span>Plan Free, sans carte bancaire</li>
+<li style="display: flex; gap: 10px"><span aria-hidden="true" style="color: #E8FF47">✓</span>Tes scores gardés dans ton historique</li>
+<li style="display: flex; gap: 10px"><span aria-hidden="true" style="color: #E8FF47">✓</span>Tu passes à un plan payant quand tu veux</li>
+</ul>
+</div>
+<form style="flex: 1 1 400px; max-width: 440px; border: 1px solid #2A2A2A; border-radius: 8px; background: #111111; padding: 32px; display: flex; flex-direction: column; gap: 18px">
+<div style="display: flex; flex-direction: column; gap: 8px"><label for="i-prenom" style="font-size: 14px; font-weight: 600">Prénom</label><input id="i-prenom" type="text" autocomplete="given-name" style="height: 52px; padding: 0 16px; border-radius: 8px; border: 1px solid #474747; background: #000000; color: #FFFFFF; font-family: inherit; font-size: 16px"></div>
+<div style="display: flex; flex-direction: column; gap: 8px"><label for="i-email" style="font-size: 14px; font-weight: 600">Email</label><input id="i-email" type="email" autocomplete="email" placeholder="toi@entreprise.fr" style="height: 52px; padding: 0 16px; border-radius: 8px; border: 1px solid #474747; background: #000000; color: #FFFFFF; font-family: inherit; font-size: 16px"></div>
+<div style="display: flex; flex-direction: column; gap: 8px"><label for="i-mdp" style="font-size: 14px; font-weight: 600">Mot de passe</label><input id="i-mdp" type="password" autocomplete="new-password" aria-describedby="i-mdp-aide" style="height: 52px; padding: 0 16px; border-radius: 8px; border: 1px solid #474747; background: #000000; color: #FFFFFF; font-family: inherit; font-size: 16px"><span id="i-mdp-aide" style="font-size: 13px; color: #AAAAAA">8 caractères minimum.</span></div>
+<label style="display: flex; align-items: flex-start; gap: 12px; font-size: 14px; line-height: 1.5; color: #D6D6D6; cursor: pointer"><input type="checkbox" required="required" style="width: 20px; height: 20px; margin: 1px 0 0; flex: none"><span>J'accepte les <a href="#">conditions d'utilisation</a> et la <a href="#">politique de confidentialité</a>.</span></label>
+<label style="display: flex; align-items: flex-start; gap: 12px; font-size: 14px; line-height: 1.5; color: #AAAAAA; cursor: pointer"><input type="checkbox" style="width: 20px; height: 20px; margin: 1px 0 0; flex: none"><span>Je veux recevoir les nouveaux articles. Facultatif.</span></label>
+<button type="submit" style="margin-top: 6px; height: 52px; border-radius: 999px; border: 0; background: #E8FF47; color: #000000; font-family: inherit; font-weight: 700; font-size: 16px; cursor: pointer">Créer mon compte gratuit →</button>
+<p style="margin: 6px 0 0; font-size: 14px; color: #AAAAAA; text-align: center">Déjà un compte ? <a href="Connexion.dc.html" style="font-weight: 600">Se connecter</a></p>
+</form>
+</main>
+<footer style="padding: 24px 32px; border-top: 1px solid #2A2A2A; font-size: 13px; color: #858585">NeuroCopy · Le copy parle au cerveau, pas à l'œil.</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":960}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

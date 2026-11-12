@@ -1,0 +1,29 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--nc-s-2);
+  color: var(--nc-text);
+  text-decoration: none;
+  font-weight: var(--nc-fw-black);
+  font-size: 18px;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+.logo:hover {
+  color: var(--nc-text);
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: var(--nc-r-pill);
+  background: var(--nc-accent);
+}
+
+.sm {
+  font-size: 17px;
+}
+.sm .dot {
+  width: 9px;
+  height: 9px;
+}

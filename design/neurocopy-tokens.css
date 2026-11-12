@@ -1,0 +1,104 @@
+/* NeuroCopy — design tokens v1.1 (12 nov. 2026)
+   Fond noir partout. Un seul accent. Contrastes AA vérifiés sur #000 et #111. */
+
+:root {
+  /* ── Couleurs : fonds ───────────────────────── */
+  --nc-bg:            #000000; /* fond principal */
+  --nc-bg-alt:        #0A0A0A; /* section alternée, panneaux secondaires */
+  --nc-card:          #111111; /* cartes, champs sur fond alt */
+  --nc-card-active:   #1A1A1A; /* item de nav actif */
+  --nc-disabled-bg:   #1C1C1C;
+  --nc-overlay:       rgba(0, 0, 0, 0.78); /* fond de modale */
+
+  /* ── Couleurs : bordures ────────────────────── */
+  --nc-border:        #2A2A2A; /* cartes, séparateurs (décoratif) */
+  --nc-border-subtle: #1F1F1F; /* lignes internes de listes */
+  --nc-border-strong: #474747; /* contours interactifs : boutons, champs (≥ 3:1) */
+
+  /* ── Couleurs : accent ──────────────────────── */
+  --nc-accent:        #E8FF47; /* CTA, mot clé, chiffres — 18,8:1 sur noir */
+  --nc-accent-hover:  #F4FFA3;
+  --nc-on-accent:     #000000;
+  --nc-accent-soft:   rgba(232, 255, 71, 0.12); /* fond de badge biais */
+
+  /* ── Couleurs : texte ───────────────────────── */
+  --nc-text:          #FFFFFF; /* 21:1 */
+  --nc-text-article:  #D6D6D6; /* corps d'article */
+  --nc-text-2:        #AAAAAA; /* 9,0:1 */
+  --nc-text-3:        #858585; /* 5,7:1 — remplace #666 (3,7:1, non AA) */
+  --nc-text-decor:    #666666; /* décor uniquement, jamais du texte */
+
+  /* ── Couleurs : statut (app uniquement) ─────── */
+  --nc-success:       #5FD38D; /* score ≥ 75 */
+  --nc-warning:       #FF9F43; /* score 50–74 */
+  --nc-error:         #FF6B6B; /* score < 50 */
+  --nc-success-soft:  rgba(95, 211, 141, 0.14);
+  --nc-warning-soft:  rgba(255, 159, 67, 0.14);
+  --nc-error-soft:    rgba(255, 107, 107, 0.14);
+
+  /* ── Espacements (base 4) ───────────────────── */
+  --nc-s-1: 4px;   --nc-s-2: 8px;   --nc-s-3: 12px;  --nc-s-4: 16px;
+  --nc-s-5: 20px;  --nc-s-6: 24px;  --nc-s-8: 32px;  --nc-s-10: 40px;
+  --nc-s-12: 48px; --nc-s-16: 64px; --nc-s-24: 96px; --nc-s-32: 128px;
+  --nc-gutter: 24px;           /* desktop */
+  --nc-gutter-mobile: 16px;
+  --nc-section-y: 128px;       /* desktop */
+  --nc-section-y-mobile: 72px;
+  --nc-container: 1200px;
+  --nc-measure: 700px;         /* colonne d'article 680–720 */
+  --nc-toc-width: 240px;
+
+  /* ── Rayons ─────────────────────────────────── */
+  --nc-r-badge: 4px;
+  --nc-r-card: 8px;            /* cartes et champs */
+  --nc-r-window: 12px;         /* mock d'app, modale */
+  --nc-r-sheet: 16px;          /* bottom sheet mobile (haut seulement) */
+  --nc-r-pill: 999px;          /* boutons */
+
+  /* ── Typographie ────────────────────────────── */
+  --nc-font: "Inter", system-ui, sans-serif;
+  --nc-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --nc-fs-hero:     112px; /* H1 homepage — mobile 48px */
+  --nc-fs-display:   96px; /* CTA final — mobile 44px */
+  --nc-fs-h1:        72px; /* H1 pages — mobile 38–44px */
+  --nc-fs-h2:        56px; /* titre de section — mobile 34px */
+  --nc-fs-h2-article: 36px; /* H2 d'article — mobile 27px */
+  --nc-fs-h3:        24px;
+  --nc-fs-lead:      20px;
+  --nc-fs-article:   19px; /* mobile 17px */
+  --nc-fs-body:      16px;
+  --nc-fs-small:     14px;
+  --nc-fs-micro:     12px; /* mono, capitales, +16 % d'espacement */
+  --nc-fs-score:    168px; /* mono — app 42px, mobile 120px */
+
+  --nc-lh-tight: 0.95;  /* titres massifs */
+  --nc-lh-title: 1.05;
+  --nc-lh-body: 1.6;
+  --nc-lh-article: 1.75;
+  --nc-ls-title: -0.045em;
+  --nc-ls-h2: -0.035em;
+  --nc-ls-micro: 0.16em;
+
+  --nc-fw-regular: 400; --nc-fw-semibold: 600; --nc-fw-bold: 700; --nc-fw-black: 800;
+
+  /* ── Tailles de contrôle ────────────────────── */
+  --nc-control-h: 52px;        /* bouton principal, champ */
+  --nc-control-h-lg: 56px;     /* CTA hero et mobile */
+  --nc-control-h-sm: 44px;     /* minimum tactile */
+
+  /* ── Mouvement ──────────────────────────────── */
+  --nc-ease: cubic-bezier(.2, .7, .2, 1);
+  --nc-dur: 600ms;             /* entrée : opacité + 12px vers le haut */
+  --nc-dur-fast: 200ms;        /* accordéon, hover */
+
+  /* ── Focus ──────────────────────────────────── */
+  --nc-focus: 2px solid var(--nc-accent);
+  --nc-focus-offset: 3px;
+}
+
+:focus-visible { outline: var(--nc-focus); outline-offset: var(--nc-focus-offset); }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}

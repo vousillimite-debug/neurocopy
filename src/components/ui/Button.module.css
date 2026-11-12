@@ -1,0 +1,102 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--nc-s-2);
+  border: 1px solid transparent;
+  border-radius: var(--nc-r-pill);
+  background: transparent;
+  font-family: var(--nc-font);
+  font-weight: var(--nc-fw-semibold);
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color var(--nc-dur-fast) var(--nc-ease),
+    border-color var(--nc-dur-fast) var(--nc-ease),
+    color var(--nc-dur-fast) var(--nc-ease);
+}
+
+/* Principal : pilule jaune, 1 seul par écran */
+.primary,
+.primary:hover {
+  background: var(--nc-accent);
+  color: var(--nc-on-accent);
+  font-weight: var(--nc-fw-bold);
+}
+.primary:hover {
+  background: var(--nc-accent-hover);
+}
+
+/* Contour */
+.outline,
+.outline:hover {
+  border-color: var(--nc-border-strong);
+  color: var(--nc-text);
+}
+.outline:hover {
+  border-color: var(--nc-text-2);
+}
+
+/* Action locale blanche (« Accepter ») */
+.white,
+.white:hover {
+  background: var(--nc-text);
+  color: var(--nc-bg);
+}
+.white:hover {
+  background: var(--nc-text-article);
+}
+
+/* Texte (« Plus tard », « Annuler ») */
+.text,
+.text:hover {
+  color: var(--nc-text-2);
+}
+.text:hover {
+  color: var(--nc-text);
+}
+.btn.text {
+  padding-inline: var(--nc-s-2);
+}
+
+/* Désactivé */
+.btn:disabled,
+.btn[aria-disabled="true"] {
+  background: var(--nc-disabled-bg);
+  border-color: transparent;
+  color: var(--nc-text-3);
+  cursor: not-allowed;
+}
+
+/* Tailles */
+.s44 {
+  height: var(--nc-control-h-sm);
+  padding: 0 20px;
+  font-size: 15px;
+}
+.s48 {
+  height: 48px;
+  padding: 0 var(--nc-s-6);
+  font-size: 15px;
+}
+.s52 {
+  height: var(--nc-control-h);
+  padding: 0 26px;
+  font-size: var(--nc-fs-body);
+}
+.s56 {
+  height: var(--nc-control-h-lg);
+  padding: 0 30px;
+  font-size: 17px;
+}
+.outline.s56 {
+  padding: 0 26px;
+}
+
+@media (max-width: 767px) {
+  .fullMobile {
+    width: 100%;
+  }
+}

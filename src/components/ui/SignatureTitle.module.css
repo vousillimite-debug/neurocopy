@@ -1,0 +1,44 @@
+.title {
+  margin: 0;
+  color: var(--nc-text);
+  font-weight: var(--nc-fw-black);
+}
+
+.hero {
+  font-size: var(--nc-fs-hero);
+  line-height: 0.94;
+  letter-spacing: -0.05em;
+}
+.display {
+  font-size: var(--nc-fs-display);
+  line-height: var(--nc-lh-tight);
+  letter-spacing: -0.05em;
+}
+.h1 {
+  font-size: var(--nc-fs-h1);
+  line-height: var(--nc-lh-title);
+  letter-spacing: var(--nc-ls-title);
+}
+.h2 {
+  font-size: var(--nc-fs-h2);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+}
+
+.second {
+  color: var(--nc-text-3);
+}
+
+.kw {
+  color: var(--nc-accent);
+}
+
+.strike {
+  text-decoration-line: line-through;
+  text-decoration-color: var(--nc-text);
+  text-decoration-thickness: 0.0625em; /* 7 px à 112 px */
+}
+
+.center {
+  text-align: center;
+}

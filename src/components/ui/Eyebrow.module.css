@@ -1,0 +1,30 @@
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--nc-mono);
+  font-size: var(--nc-fs-micro);
+  letter-spacing: var(--nc-ls-micro);
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+
+/* Le point jaune */
+.pip {
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: var(--nc-r-pill);
+  background: var(--nc-accent);
+}
+
+/* Variantes */
+.dot {
+  color: var(--nc-text-2);
+}
+.accent {
+  color: var(--nc-accent);
+}
+.muted {
+  color: var(--nc-text-3);
+}

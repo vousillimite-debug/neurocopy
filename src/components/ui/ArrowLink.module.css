@@ -1,0 +1,22 @@
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: var(--nc-fw-semibold);
+  font-size: 15px;
+  text-decoration: none;
+}
+.accent,
+.accent:hover {
+  color: var(--nc-accent);
+}
+.white,
+.white:hover {
+  color: var(--nc-text);
+}
+.arrow {
+  transition: transform var(--nc-dur-fast) var(--nc-ease);
+}
+.link:hover .arrow {
+  transform: translateX(3px);
+}

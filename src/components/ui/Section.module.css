@@ -1,0 +1,32 @@
+.container {
+  width: 100%;
+  /* 1200 px de contenu + gouttières, comme les maquettes */
+  max-width: calc(var(--nc-container) + 2 * var(--nc-gutter));
+  margin-inline: auto;
+  padding-inline: var(--nc-gutter);
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  padding-block: var(--nc-section-y);
+}
+.md {
+  gap: var(--nc-s-12);
+}
+.lg {
+  gap: 56px;
+}
+
+.alt {
+  background: var(--nc-bg-alt);
+  border-top: 1px solid var(--nc-border);
+  border-bottom: 1px solid var(--nc-border);
+}
+
+@media (max-width: 767px) {
+  .md,
+  .lg {
+    gap: var(--nc-s-8);
+  }
+}

@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Tarifs NeuroCopy</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#000000}
+a{color:#E8FF47}a:hover{color:#F4FFA3}
+:focus-visible{outline:2px solid #E8FF47;outline-offset:3px}
+details>summary{list-style:none;cursor:pointer}
+details>summary::-webkit-details-marker{display:none}
+details[open] .nc-plus{transform:rotate(45deg)}
+</style>
+</helmet>
+<div style="background: #000000; color: #FFFFFF; font-family: Inter, system-ui, sans-serif; min-height: 100vh">
+
+<nav aria-label="Navigation principale" style="border-bottom: 1px solid #2A2A2A">
+<div style="max-width: 1200px; margin: 0 auto; padding: 14px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+<a href="#" style="display: flex; align-items: center; gap: 8px; color: #FFFFFF; text-decoration: none; font-weight: 800; font-size: 18px; letter-spacing: -0.03em"><span style="width: 10px; height: 10px; border-radius: 999px; background: #E8FF47"></span>NeuroCopy</a>
+<div style="display: flex; flex-wrap: wrap; gap: 28px; font-size: 15px"><a href="#" style="color: #AAAAAA; text-decoration: none">Méthode</a><a href="#" style="color: #AAAAAA; text-decoration: none">Outils gratuits</a><a href="#" style="color: #AAAAAA; text-decoration: none">Ressources</a><a href="#" aria-current="page" style="color: #FFFFFF; text-decoration: none">Tarifs</a></div>
+<div style="display: flex; align-items: center; gap: 20px"><a href="#" style="color: #FFFFFF; text-decoration: none; font-size: 15px">Se connecter</a><a href="#" style="display: inline-flex; align-items: center; height: 44px; padding: 0 20px; border-radius: 999px; border: 1px solid #474747; color: #FFFFFF; text-decoration: none; font-size: 15px; font-weight: 600">Essai gratuit</a></div>
+</div>
+</nav>
+
+<header style="max-width: 900px; margin: 0 auto; padding: 96px 24px 48px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 24px">
+<div style="display: flex; align-items: center; gap: 10px; font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #AAAAAA"><span style="width: 8px; height: 8px; border-radius: 999px; background: #E8FF47"></span>Tarifs</div>
+<h1 style="margin: 0; font-size: 80px; line-height: 0.96; letter-spacing: -0.045em; font-weight: 800">Commence gratuit.<br><span style="color: #858585">Paie quand ça <span style="color: #E8FF47">convertit.</span></span></h1>
+<p style="margin: 0; max-width: 520px; font-size: 18px; line-height: 1.65; color: #AAAAAA">Sans engagement. Tu changes de plan ou tu arrêtes quand tu veux.</p>
+<div role="group" aria-label="Période de facturation" style="display: flex; gap: 4px; padding: 4px; border: 1px solid #2A2A2A; border-radius: 999px; background: #0A0A0A">
+<button type="button" aria-pressed="true" style="height: 44px; padding: 0 22px; border: 0; border-radius: 999px; background: #FFFFFF; color: #000000; font-family: inherit; font-size: 15px; font-weight: 600">Mensuel</button>
+<button type="button" aria-pressed="false" style="display: inline-flex; align-items: center; gap: 8px; height: 44px; padding: 0 22px; border: 0; border-radius: 999px; background: transparent; color: #AAAAAA; font-family: inherit; font-size: 15px; font-weight: 600">Annuel<span style="padding: 3px 7px; border-radius: 4px; background: rgba(232,255,71,0.12); color: #E8FF47; font-family: 'JetBrains Mono', monospace; font-size: 11px">[−X %]</span></button>
+</div>
+</header>
+
+<section aria-label="Plans" style="max-width: 1200px; margin: 0 auto; padding: 16px 24px 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; align-items: stretch">
+
+<article style="border: 1px solid #2A2A2A; border-radius: 8px; background: #111111; padding: 28px; display: flex; flex-direction: column; gap: 22px">
+<div style="display: flex; flex-direction: column; gap: 8px"><h2 style="margin: 0; font-size: 20px; font-weight: 700">Free</h2><span style="font-size: 14px; color: #AAAAAA; line-height: 1.5">Pour voir ce que ton copy vaut.</span></div>
+<span style="font-size: 56px; font-weight: 800; letter-spacing: -0.05em; line-height: 1">0 €</span>
+<a href="#" style="display: flex; align-items: center; justify-content: center; height: 48px; border-radius: 999px; border: 1px solid #474747; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 15px">Commencer</a>
+<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 14px; line-height: 1.45; color: #D6D6D6">
+<li style="display: flex; gap: 10px"><span aria-hidden="true" style="color: #E8FF47">✓</span>[N] analyses par mois</li>
+<li style="display: flex; gap: 10px"><span aria-hidden="true" style="color: #E8FF47">✓</span>Module Analyser</li>
+</ul>
+</article>
+
+<article style="border: 1px solid #2A2A2A; border-radius: 8px; background: #111111; padding: 28px; display: flex; flex-direction: column; gap: 22px">
+<div style="display: flex; flex-direction: column; gap: 8px"><h2 style="margin: 0; font-size: 20px; font-weight: 700">Solo</h2><span style="font-size: 14px; color: #AAAAAA; line-height: 1.5">Pour le copywriter indépendant.</span></div>
+<span style="font-size: 56px; font-weight: 800; letter-spacing: -0.05em; line-height: 1">19 €<span style="font-size: 14px; color: #858585; letter-spacing: 0; font-weight: 400"> /mois</span></span>
+<a href="#" style="display: flex; align-items: center; justify-content: center; height: 48px; border-radius: 999px; border: 1px solid #474747; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 15px">Choisir Solo</a>
+<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 14px; line-height: 1.45; color: #D6D6D6">
+<li style="display: flex; gap: 10px"><span aria-hidden="true" style="color: #E8FF47">✓</span>[N] analyses par mois</li>
+<li style="display: flex; gap: 10px"><span aria-hidden="true" style="color: #E8FF47">✓</span>Analyser, Corriger, Rédiger</li>
+<li style="display: flex; gap: 10px"><span aria-hidden="true" style="color: #E8FF47">✓</span>Biais et source sur chaque correction</li>
+</ul>
+</article>
+
+<article style="position: relative; border: 2px solid #E8FF47; border-radius: 8px; background: #111111; padding: 27px; display: flex; flex-direction: column; gap: 22px">
+<span style="position: absolute; top: -13px; left: 26px; padding: 5px 10px; border-radius: 4px; background: #E8FF47; color: #000000; font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.08em">LE PLUS CHOISI</span>
+<div style="display: flex; flex-direction: column; gap: 8px"><h2 style="margin: 0; font-size: 20px; font-weight: 700">Growth</h2><span style="font-size: 14px; color: #AAAAAA; line-height: 1.5">Pour l'équipe qui teste et itère.</span></div>
+<span style="font-size: 56px; font-weight: 800; letter-spacing: -0.05em; line-height: 1; color: #E8FF47">49 €<span style="font-size: 14px; color: #858585; letter-spacing: 0; font-weight: 400"> /mois</span></span>
+<a href="#" style="display: flex; align-items: center; justify-content: center; height: 48px; border-radius: 999px; background: #E8FF47; color: #000000; text-decoration: none; font-weight: 700; font-size: 15px">Commencer avec Growth →</a>
+<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 14px; line-height: 1.45; color: #D6D6D6">
+<li style="display: flex; gap: 10px; color: #FFFFFF; font-weight: 600"><span aria-hidden="true" style="color: #E8FF47">✓</span>Tout Solo, plus :</li>
+<li style="display: flex; gap: 10px"><span aria-hidden="true" style="color: #E8FF47">✓</span>Comparer</li>
+<li style="display: flex; gap: 10px"><span aria-hidden="true" style="color: #E8FF47">✓</span>Écouter : les mots de ton marché</li>
+<li style="display: flex; gap: 10px"><span aria-hidden="true" style="color: #E8FF47">✓</span>Assistant Offre irrésistible</li>
+</ul>
+</article>
+
+<article style="border: 1px solid #2A2A2A; border-radius: 8px; background: #111111; padding: 28px; display: flex; flex-direction: column; gap: 22px">
+<div style="display: flex; flex-direction: column; gap: 8px"><h2 style="margin: 0; font-size: 20px; font-weight: 700">Agency</h2><span style="font-size: 14px; color: #AAAAAA; line-height: 1.5">Pour l'agence qui livre des clients.</span></div>
+<span style="font-size: 56px; font-weight: 800; letter-spacing: -0.05em; line-height: 1">149 €<span style="font-size: 14px; color: #858585; letter-spacing: 0; font-weight: 400"> /mois</span></span>
+<a href="#" style="display: flex; align-items: center; justify-content: center; height: 48px; border-radius: 999px; border: 1px solid #474747; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 15px">Choisir Agency</a>
+<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 14px; line-height: 1.45; color: #D6D6D6">
+<li style="display: flex; gap: 10px; color: #FFFFFF; font-weight: 600"><span aria-hidden="true" style="color: #E8FF47">✓</span>Tout Growth, plus :</li>
+<li style="display: flex; gap: 10px"><span aria-hidden="true" style="color: #E8FF47">✓</span>Marque blanche</li>
+<li style="display: flex; gap: 10px"><span aria-hidden="true" style="color: #E8FF47">✓</span>Accès API</li>
+</ul>
+</article>
+</section>
+
+<section aria-labelledby="comparatif" style="max-width: 1200px; margin: 0 auto; padding: 112px 24px 0; display: flex; flex-direction: column; gap: 28px">
+<h2 id="comparatif" style="margin: 0; font-size: 44px; line-height: 1.05; letter-spacing: -0.035em; font-weight: 800">Tout comparer.<br><span style="color: #858585">Ligne par <span style="color: #E8FF47">ligne.</span></span></h2>
+<div style="overflow-x: auto; border: 1px solid #2A2A2A; border-radius: 8px">
+<table style="width: 100%; min-width: 760px; border-collapse: collapse; font-size: 15px">
+<thead>
+<tr style="border-bottom: 1px solid #2A2A2A">
+<th scope="col" style="text-align: left; padding: 20px 24px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.16em; color: #858585; font-weight: 500">FONCTION</th>
+<th scope="col" style="padding: 20px 16px; font-weight: 700">Free</th>
+<th scope="col" style="padding: 20px 16px; font-weight: 700">Solo</th>
+<th scope="col" style="padding: 20px 16px; font-weight: 700; background: #111111; color: #E8FF47">Growth</th>
+<th scope="col" style="padding: 20px 16px; font-weight: 700">Agency</th>
+</tr>
+</thead>
+<tbody style="text-align: center">
+<tr style="border-bottom: 1px solid #1F1F1F"><th scope="row" style="text-align: left; padding: 16px 24px; font-weight: 500">Analyses par mois</th><td style="padding: 16px; font-family: 'JetBrains Mono', monospace; color: #E8FF47">[N]</td><td style="padding: 16px; font-family: 'JetBrains Mono', monospace; color: #E8FF47">[N]</td><td style="padding: 16px; background: #111111; font-family: 'JetBrains Mono', monospace; color: #E8FF47">[N]</td><td style="padding: 16px; font-family: 'JetBrains Mono', monospace; color: #E8FF47">[N]</td></tr>
+<tr style="border-bottom: 1px solid #1F1F1F"><th scope="row" style="text-align: left; padding: 16px 24px; font-weight: 500">Analyser</th><td style="padding: 16px; color: #E8FF47"><span aria-label="Inclus">✓</span></td><td style="padding: 16px; color: #E8FF47"><span aria-label="Inclus">✓</span></td><td style="padding: 16px; background: #111111; color: #E8FF47"><span aria-label="Inclus">✓</span></td><td style="padding: 16px; color: #E8FF47"><span aria-label="Inclus">✓</span></td></tr>
+<tr style="border-bottom: 1px solid #1F1F1F"><th scope="row" style="text-align: left; padding: 16px 24px; font-weight: 500">Corriger</th><td style="padding: 16px; color: #858585"><span aria-label="Non inclus">—</span></td><td style="padding: 16px; color: #E8FF47"><span aria-label="Inclus">✓</span></td><td style="padding: 16px; background: #111111; color: #E8FF47"><span aria-label="Inclus">✓</span></td><td style="padding: 16px; color: #E8FF47"><span aria-label="Inclus">✓</span></td></tr>
+<tr style="border-bottom: 1px solid #1F1F1F"><th scope="row" style="text-align: left; padding: 16px 24px; font-weight: 500">Rédiger</th><td style="padding: 16px; color: #858585"><span aria-label="Non inclus">—</span></td><td style="padding: 16px; color: #E8FF47"><span aria-label="Inclus">✓</span></td><td style="padding: 16px; background: #111111; color: #E8FF47"><span aria-label="Inclus">✓</span></td><td style="padding: 16px; color: #E8FF47"><span aria-label="Inclus">✓</span></td></tr>
+<tr style="border-bottom: 1px solid #1F1F1F"><th scope="row" style="text-align: left; padding: 16px 24px; font-weight: 500">Comparer</th><td style="padding: 16px; color: #858585"><span aria-label="Non inclus">—</span></td><td style="padding: 16px; color: #858585"><span aria-label="Non inclus">—</span></td><td style="padding: 16px; background: #111111; color: #E8FF47"><span aria-label="Inclus">✓</span></td><td style="padding: 16px; color: #E8FF47"><span aria-label="Inclus">✓</span></td></tr>
+<tr style="border-bottom: 1px solid #1F1F1F"><th scope="row" style="text-align: left; padding: 16px 24px; font-weight: 500">Écouter</th><td style="padding: 16px; color: #858585"><span aria-label="Non inclus">—</span></td><td style="padding: 16px; color: #858585"><span aria-label="Non inclus">—</span></td><td style="padding: 16px; background: #111111; color: #E8FF47"><span aria-label="Inclus">✓</span></td><td style="padding: 16px; color: #E8FF47"><span aria-label="Inclus">✓</span></td></tr>
+<tr style="border-bottom: 1px solid #1F1F1F"><th scope="row" style="text-align: left; padding: 16px 24px; font-weight: 500">Offre irrésistible</th><td style="padding: 16px; color: #858585"><span aria-label="Non inclus">—</span></td><td style="padding: 16px; color: #858585"><span aria-label="Non inclus">—</span></td><td style="padding: 16px; background: #111111; color: #E8FF47"><span aria-label="Inclus">✓</span></td><td style="padding: 16px; color: #E8FF47"><span aria-label="Inclus">✓</span></td></tr>
+<tr style="border-bottom: 1px solid #1F1F1F"><th scope="row" style="text-align: left; padding: 16px 24px; font-weight: 500">Marque blanche</th><td style="padding: 16px; color: #858585"><span aria-label="Non inclus">—</span></td><td style="padding: 16px; color: #858585"><span aria-label="Non inclus">—</span></td><td style="padding: 16px; background: #111111; color: #858585"><span aria-label="Non inclus">—</span></td><td style="padding: 16px; color: #E8FF47"><span aria-label="Inclus">✓</span></td></tr>
+<tr><th scope="row" style="text-align: left; padding: 16px 24px; font-weight: 500">API</th><td style="padding: 16px; color: #858585"><span aria-label="Non inclus">—</span></td><td style="padding: 16px; color: #858585"><span aria-label="Non inclus">—</span></td><td style="padding: 16px; background: #111111; color: #858585"><span aria-label="Non inclus">—</span></td><td style="padding: 16px; color: #E8FF47"><span aria-label="Inclus">✓</span></td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section style="max-width: 1200px; margin: 0 auto; padding: 64px 24px 0">
+<div style="border: 1px solid #2A2A2A; border-radius: 8px; background: #0A0A0A; padding: 36px 40px; display: flex; flex-wrap: wrap; align-items: center; gap: 32px">
+<div style="display: flex; align-items: baseline; gap: 8px"><span style="font-size: 96px; font-weight: 800; letter-spacing: -0.06em; line-height: 0.9; color: #E8FF47">30</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #AAAAAA">jours</span></div>
+<div style="flex: 1 1 400px; display: flex; flex-direction: column; gap: 8px"><strong style="font-size: 26px; letter-spacing: -0.025em; line-height: 1.2">Garantie 30 jours. Satisfait ou remboursé.</strong><span style="font-size: 16px; color: #AAAAAA; line-height: 1.6">Si NeuroCopy ne change rien à tes textes, tu écris un email. On te rembourse, sans justification.</span></div>
+</div>
+</section>
+
+<section style="max-width: 760px; margin: 0 auto; padding: 112px 24px 0; display: flex; flex-direction: column; gap: 24px">
+<h2 style="margin: 0; font-size: 44px; line-height: 1.05; letter-spacing: -0.035em; font-weight: 800">Questions sur les tarifs</h2>
+<div style="border-top: 1px solid #2A2A2A">
+<details open="open" style="border-bottom: 1px solid #2A2A2A"><summary style="display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 22px 0; font-size: 18px; font-weight: 600">C'est quoi, une analyse ?<span class="nc-plus" aria-hidden="true" style="flex: none; font-size: 24px; color: #E8FF47; transition: transform .2s">+</span></summary><p style="margin: 0 0 22px; font-size: 16px; line-height: 1.7; color: #AAAAAA">Une action sur un texte : un score, une correction ou une rédaction. [RÈGLE DE DÉCOMPTE À CONFIRMER]</p></details>
+<details style="border-bottom: 1px solid #2A2A2A"><summary style="display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 22px 0; font-size: 18px; font-weight: 600">Je peux changer de plan en cours de route ?<span class="nc-plus" aria-hidden="true" style="flex: none; font-size: 24px; color: #E8FF47; transition: transform .2s">+</span></summary><p style="margin: 0 0 22px; font-size: 16px; line-height: 1.7; color: #AAAAAA">Oui. Le passage au plan supérieur est immédiat, au prorata.</p></details>
+<details style="border-bottom: 1px solid #2A2A2A"><summary style="display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 22px 0; font-size: 18px; font-weight: 600">Mensuel ou annuel, quelle différence ?<span class="nc-plus" aria-hidden="true" style="flex: none; font-size: 24px; color: #E8FF47; transition: transform .2s">+</span></summary><p style="margin: 0 0 22px; font-size: 16px; line-height: 1.7; color: #AAAAAA">Les mêmes modules. En annuel, tu paies une fois par an et moins cher. [REMISE À CONFIRMER]</p></details>
+<details style="border-bottom: 1px solid #2A2A2A"><summary style="display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 22px 0; font-size: 18px; font-weight: 600">J'ai une facture avec TVA ?<span class="nc-plus" aria-hidden="true" style="flex: none; font-size: 24px; color: #E8FF47; transition: transform .2s">+</span></summary><p style="margin: 0 0 22px; font-size: 16px; line-height: 1.7; color: #AAAAAA">Oui, à chaque paiement, téléchargeable depuis ton compte.</p></details>
+</div>
+</section>
+
+<footer style="margin-top: 128px; border-top: 1px solid #2A2A2A">
+<div style="max-width: 1200px; margin: 0 auto; padding: 48px 24px 32px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px">
+<div style="display: flex; flex-direction: column; gap: 10px"><span style="display: flex; align-items: center; gap: 8px; font-weight: 800; font-size: 18px; letter-spacing: -0.03em"><span style="width: 10px; height: 10px; border-radius: 999px; background: #E8FF47"></span>NeuroCopy</span><span style="font-size: 15px; color: #AAAAAA">NeuroCopy · Le copy parle au cerveau, pas à l'œil.</span></div>
+<span style="align-self: flex-end; font-size: 13px; color: #858585">© 2026 NeuroCopy · <a href="#" style="color: #858585">Mentions légales</a> · <a href="#" style="color: #858585">CGV</a></span>
+</div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":3700}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

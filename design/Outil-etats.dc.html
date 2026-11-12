@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Outil gratuit — états limites</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#000000}
+a{color:#E8FF47}a:hover{color:#F4FFA3}
+:focus-visible{outline:2px solid #E8FF47;outline-offset:3px}
+</style>
+</helmet>
+<div style="background: #000000; color: #FFFFFF; font-family: Inter, system-ui, sans-serif; min-height: 100vh; padding-bottom: 96px">
+
+<nav aria-label="Navigation principale" style="border-bottom: 1px solid #2A2A2A">
+<div style="max-width: 1200px; margin: 0 auto; padding: 14px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+<a href="#" style="display: flex; align-items: center; gap: 8px; color: #FFFFFF; text-decoration: none; font-weight: 800; font-size: 18px; letter-spacing: -0.03em"><span style="width: 10px; height: 10px; border-radius: 999px; background: #E8FF47"></span>NeuroCopy</a>
+<div style="display: flex; flex-wrap: wrap; gap: 28px; font-size: 15px"><a href="#" style="color: #AAAAAA; text-decoration: none">Méthode</a><a href="#" aria-current="page" style="color: #FFFFFF; text-decoration: none">Outils gratuits</a><a href="#" style="color: #AAAAAA; text-decoration: none">Ressources</a><a href="#" style="color: #AAAAAA; text-decoration: none">Tarifs</a></div>
+<div style="display: flex; align-items: center; gap: 20px"><a href="#" style="color: #FFFFFF; text-decoration: none; font-size: 15px">Se connecter</a><a href="#" style="display: inline-flex; align-items: center; height: 44px; padding: 0 20px; border-radius: 999px; border: 1px solid #474747; color: #FFFFFF; text-decoration: none; font-size: 15px; font-weight: 600">Essai gratuit</a></div>
+</div>
+</nav>
+
+<div style="max-width: 880px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column">
+
+<div style="margin-top: 64px; padding: 12px 0; border-top: 1px dashed #474747; border-bottom: 1px dashed #474747; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.16em; color: #858585">ÉTAT 1 · 3 ANALYSES GRATUITES UTILISÉES</div>
+<section aria-labelledby="quota" style="margin-top: 32px; border: 1px solid #2A2A2A; border-radius: 8px; background: #111111; padding: 48px; display: flex; flex-direction: column; align-items: flex-start; gap: 22px">
+<div style="display: flex; align-items: baseline; gap: 6px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 72px; line-height: 0.9; font-weight: 600; letter-spacing: -0.04em; color: #E8FF47">3</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 24px; color: #858585">/3 analyses</span></div>
+<h2 id="quota" style="margin: 0; font-size: 40px; line-height: 1.06; letter-spacing: -0.035em; font-weight: 800">Tu as utilisé tes 3 analyses gratuites.<br><span style="color: #858585">Tu sais déjà où ton texte <span style="color: #E8FF47">coince.</span></span></h2>
+<p style="margin: 0; max-width: 560px; font-size: 17px; line-height: 1.65; color: #AAAAAA">On sait ce que c'est : tu étais lancé. Crée ton compte gratuit pour continuer. Tes scores restent dans ton historique.</p>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 24px">
+<a href="#" style="display: inline-flex; align-items: center; height: 52px; padding: 0 26px; border-radius: 999px; background: #E8FF47; color: #000000; text-decoration: none; font-weight: 700; font-size: 16px">Créer mon compte gratuit →</a>
+<a href="#" style="font-size: 15px; font-weight: 600; color: #FFFFFF; text-underline-offset: 4px">Tester une accroche, sans limite</a>
+</div>
+<span style="font-size: 14px; color: #858585">Déjà un compte ? <a href="#" style="color: #AAAAAA">Se connecter</a></span>
+</section>
+
+<div style="margin-top: 96px; padding: 12px 0; border-top: 1px dashed #474747; border-bottom: 1px dashed #474747; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.16em; color: #858585">ÉTAT 2 · ERREUR D'ANALYSE</div>
+<section aria-label="Erreur" style="margin-top: 32px; border: 1px solid #2A2A2A; border-radius: 8px; background: #111111; padding: 28px; display: flex; flex-direction: column; gap: 20px">
+<div role="alert" style="display: flex; align-items: flex-start; gap: 16px; padding: 20px; border: 1px solid #474747; border-radius: 8px; background: #0A0A0A">
+<span aria-hidden="true" style="flex: none; width: 40px; height: 40px; border-radius: 999px; border: 1px solid #E8FF47; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E8FF47" stroke-width="2.2" stroke-linecap="round"><path d="M12 7v6M12 17h.01"></path></svg></span>
+<div style="display: flex; flex-direction: column; gap: 4px"><strong style="font-size: 18px">L'analyse n'a pas abouti.</strong><span style="font-size: 16px; line-height: 1.6; color: #AAAAAA">Ton texte n'a pas été conservé. Réessaie.</span></div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<label for="corps-err" style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.12em; color: #AAAAAA">CORPS DE L'EMAIL</label>
+<textarea id="corps-err" rows="5" style="padding: 16px; border-radius: 8px; border: 1px solid #2A2A2A; background: #000000; color: #D6D6D6; font-family: inherit; font-size: 16px; line-height: 1.65; resize: vertical">Salut Julie,
+
+J'espère que tu vas bien. Je voulais te présenter notre nouveau programme de coaching commercial…</textarea>
+</div>
+<div style="display: flex; justify-content: flex-end"><button type="button" style="display: inline-flex; align-items: center; height: 52px; padding: 0 26px; border-radius: 999px; border: 0; background: #E8FF47; color: #000000; font-family: inherit; font-weight: 700; font-size: 16px; cursor: pointer">Réessayer l'analyse</button></div>
+</section>
+
+<div style="margin-top: 96px; padding: 12px 0; border-top: 1px dashed #474747; border-bottom: 1px dashed #474747; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.16em; color: #858585">ÉTAT 3 · TEXTE TROP COURT</div>
+<section aria-label="Texte trop court" style="margin-top: 32px; border: 1px solid #2A2A2A; border-radius: 8px; background: #111111; padding: 28px; display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<label for="corps-court" style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.12em; color: #AAAAAA">CORPS DE L'EMAIL</label>
+<textarea id="corps-court" rows="4" aria-invalid="true" aria-describedby="aide-court" style="padding: 16px; border-radius: 8px; border: 2px solid #E8FF47; background: #000000; color: #D6D6D6; font-family: inherit; font-size: 16px; line-height: 1.65; resize: vertical">Salut, dispo pour un call jeudi ?</textarea>
+<div id="aide-court" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; font-size: 14px"><span style="color: #FFFFFF">Ton texte est trop court pour un score fiable. Ajoute au moins une phrase sur ton offre.</span><span style="font-family: 'JetBrains Mono', monospace; color: #E8FF47">7 / [N] mots</span></div>
+</div>
+<div style="display: flex; justify-content: flex-end"><button type="button" disabled="disabled" style="display: inline-flex; align-items: center; height: 52px; padding: 0 26px; border-radius: 999px; border: 1px solid #2A2A2A; background: #1C1C1C; color: #858585; font-family: inherit; font-weight: 600; font-size: 16px">Analyser mon email</button></div>
+</section>
+
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2600}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

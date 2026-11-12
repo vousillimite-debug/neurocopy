@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Analyseur d'email gratuit</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#000000}
+a{color:#E8FF47}a:hover{color:#F4FFA3}
+:focus-visible{outline:2px solid #E8FF47;outline-offset:3px}
+</style>
+</helmet>
+<div style="background: #000000; color: #FFFFFF; font-family: Inter, system-ui, sans-serif; min-height: 100vh">
+
+<nav aria-label="Navigation principale" style="border-bottom: 1px solid #2A2A2A">
+<div style="max-width: 1200px; margin: 0 auto; padding: 14px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+<a href="#" style="display: flex; align-items: center; gap: 8px; color: #FFFFFF; text-decoration: none; font-weight: 800; font-size: 18px; letter-spacing: -0.03em"><span style="width: 10px; height: 10px; border-radius: 999px; background: #E8FF47"></span>NeuroCopy</a>
+<div style="display: flex; flex-wrap: wrap; gap: 28px; font-size: 15px"><a href="#" style="color: #AAAAAA; text-decoration: none">Méthode</a><a href="#" aria-current="page" style="color: #FFFFFF; text-decoration: none">Outils gratuits</a><a href="#" style="color: #AAAAAA; text-decoration: none">Ressources</a><a href="#" style="color: #AAAAAA; text-decoration: none">Tarifs</a></div>
+<div style="display: flex; align-items: center; gap: 20px"><a href="#" style="color: #FFFFFF; text-decoration: none; font-size: 15px">Se connecter</a><a href="#" style="display: inline-flex; align-items: center; height: 44px; padding: 0 20px; border-radius: 999px; border: 1px solid #474747; color: #FFFFFF; text-decoration: none; font-size: 15px; font-weight: 600">Essai gratuit</a></div>
+</div>
+</nav>
+
+<header style="max-width: 960px; margin: 0 auto; padding: 80px 24px 48px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 24px">
+<div style="display: flex; align-items: center; gap: 10px; font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #AAAAAA"><span style="width: 8px; height: 8px; border-radius: 999px; background: #E8FF47"></span>Outil gratuit · Analyseur d'email</div>
+<h1 style="margin: 0; font-size: 72px; line-height: 0.98; letter-spacing: -0.045em; font-weight: 800">Colle ton email.<br><span style="color: #858585">Vois où le cerveau <span style="color: #E8FF47">décroche.</span></span></h1>
+<p style="margin: 0; max-width: 560px; font-size: 18px; line-height: 1.65; color: #AAAAAA">Un score sur 100, trois corrections prêtes à copier, la source de chaque recommandation. Sans inscription.</p>
+<div role="tablist" aria-label="Choisir l'outil" style="display: flex; gap: 6px; padding: 5px; border: 1px solid #2A2A2A; border-radius: 999px; background: #0A0A0A">
+<a href="#" role="tab" aria-selected="true" style="display: inline-flex; align-items: center; height: 40px; padding: 0 18px; border-radius: 999px; background: #FFFFFF; color: #000000; text-decoration: none; font-size: 14px; font-weight: 600">Analyseur d'email</a>
+<a href="#" role="tab" aria-selected="false" style="display: inline-flex; align-items: center; height: 40px; padding: 0 18px; border-radius: 999px; color: #AAAAAA; text-decoration: none; font-size: 14px; font-weight: 600">Testeur d'accroche</a>
+</div>
+</header>
+
+<section aria-label="Saisie" style="max-width: 880px; margin: 0 auto; padding: 0 24px">
+<form style="border: 1px solid #2A2A2A; border-radius: 8px; background: #111111; padding: 28px; display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<label for="objet" style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.12em; color: #AAAAAA">OBJET</label>
+<input id="objet" type="text" value="Nouveauté : notre programme de coaching commercial" style="height: 52px; padding: 0 16px; border-radius: 8px; border: 1px solid #2A2A2A; background: #000000; color: #FFFFFF; font-family: inherit; font-size: 16px">
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<label for="corps" style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.12em; color: #AAAAAA">CORPS DE L'EMAIL</label>
+<textarea id="corps" rows="8" style="padding: 16px; border-radius: 8px; border: 1px solid #2A2A2A; background: #000000; color: #D6D6D6; font-family: inherit; font-size: 16px; line-height: 1.65; resize: vertical">Salut Julie,
+
+J'espère que tu vas bien. Je voulais te présenter notre nouveau programme de coaching commercial. Il dure 6 semaines et couvre la prospection, la négociation et le closing.
+
+Si ça t'intéresse, n'hésite pas à me répondre.
+
+Bonne journée,
+Marc</textarea>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #858585">412 caractères · ton texte n'est pas conservé</span>
+<button type="button" style="display: inline-flex; align-items: center; height: 52px; padding: 0 26px; border-radius: 999px; border: 1px solid #474747; background: transparent; color: #FFFFFF; font-family: inherit; font-size: 16px; font-weight: 600; cursor: pointer">Relancer l'analyse</button>
+</div>
+</form>
+</section>
+
+<section aria-label="Résultat" style="max-width: 880px; margin: 0 auto; padding: 72px 24px 0; display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 48px; padding-bottom: 40px; border-bottom: 1px solid #2A2A2A">
+<div style="display: flex; align-items: baseline; gap: 6px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 168px; line-height: 0.9; font-weight: 600; letter-spacing: -0.05em; color: #E8FF47">58</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 36px; color: #858585">/100</span></div>
+<div style="flex: 1 1 320px; display: flex; flex-direction: column; gap: 14px">
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.16em; color: #AAAAAA">SCORE DE CONVERSION</span>
+<p style="margin: 0; font-size: 30px; line-height: 1.15; letter-spacing: -0.03em; font-weight: 800">Ton email se lit.<br><span style="color: #858585">Il ne se fait pas répondre.</span></p>
+<div style="display: flex; flex-direction: column; gap: 10px; margin-top: 6px">
+<div style="display: flex; align-items: center; gap: 12px; font-size: 14px"><span style="flex: 0 0 90px; color: #AAAAAA">Accroche</span><div style="flex: 1; height: 6px; border-radius: 999px; background: #2A2A2A"><div style="width: 41%; height: 100%; border-radius: 999px; background: #E8FF47"></div></div><span style="flex: 0 0 28px; font-family: 'JetBrains Mono', monospace; color: #FFFFFF; text-align: right">41</span></div>
+<div style="display: flex; align-items: center; gap: 12px; font-size: 14px"><span style="flex: 0 0 90px; color: #AAAAAA">Clarté</span><div style="flex: 1; height: 6px; border-radius: 999px; background: #2A2A2A"><div style="width: 78%; height: 100%; border-radius: 999px; background: #E8FF47"></div></div><span style="flex: 0 0 28px; font-family: 'JetBrains Mono', monospace; color: #FFFFFF; text-align: right">78</span></div>
+<div style="display: flex; align-items: center; gap: 12px; font-size: 14px"><span style="flex: 0 0 90px; color: #AAAAAA">CTA</span><div style="flex: 1; height: 6px; border-radius: 999px; background: #2A2A2A"><div style="width: 35%; height: 100%; border-radius: 999px; background: #E8FF47"></div></div><span style="flex: 0 0 28px; font-family: 'JetBrains Mono', monospace; color: #FFFFFF; text-align: right">35</span></div>
+<span style="font-size: 13px; color: #858585">+ 4 dimensions dans l'analyse complète</span>
+</div>
+</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 8px">
+<div style="display: flex; align-items: center; gap: 10px; font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #AAAAAA"><span style="width: 8px; height: 8px; border-radius: 999px; background: #E8FF47"></span>3 quick wins</div>
+<h2 style="margin: 0; font-size: 40px; line-height: 1.08; letter-spacing: -0.035em; font-weight: 800">Trois phrases à changer.<br><span style="color: #858585">Copie, colle, renvoie.</span></h2>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 16px">
+<article style="border: 1px solid #2A2A2A; border-radius: 8px; background: #111111; overflow: hidden">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 16px 24px; border-bottom: 1px solid #2A2A2A"><span style="display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: 16px"><span style="font-family: 'JetBrains Mono', monospace; color: #E8FF47">01</span>L'ouverture parle de toi</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #858585">Accroche</span></div>
+<div style="display: flex; flex-wrap: wrap">
+<div style="flex: 1 1 300px; padding: 20px 24px; border-right: 1px solid #2A2A2A; display: flex; flex-direction: column; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.16em; color: #858585">AVANT</span><p style="margin: 0; font-size: 17px; line-height: 1.5; color: #AAAAAA"><s>J'espère que tu vas bien. Je voulais te présenter notre nouveau programme.</s></p></div>
+<div style="flex: 1 1 300px; padding: 20px 24px; background: #0A0A0A; display: flex; flex-direction: column; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.16em; color: #E8FF47">APRÈS</span><p style="margin: 0; font-size: 17px; line-height: 1.5; color: #FFFFFF; font-weight: 600">Tu as relancé combien de prospects cette semaine ? Et combien t'ont répondu ?</p></div>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; padding: 14px 24px; border-top: 1px solid #2A2A2A"><span style="padding: 5px 9px; border-radius: 4px; background: rgba(232,255,71,0.12); color: #E8FF47; font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600">Effet d'autoréférence</span><span style="padding: 5px 9px; border-radius: 4px; border: 1px solid #2A2A2A; color: #AAAAAA; font-family: 'JetBrains Mono', monospace; font-size: 12px">Rogers, Kuiper &amp; Kirker, 1977</span></div>
+</article>
+
+<article style="border: 1px solid #2A2A2A; border-radius: 8px; background: #111111; overflow: hidden">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 16px 24px; border-bottom: 1px solid #2A2A2A"><span style="display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: 16px"><span style="font-family: 'JetBrains Mono', monospace; color: #E8FF47">02</span>Tu listes le contenu, pas l'enjeu</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #858585">Émotion</span></div>
+<div style="display: flex; flex-wrap: wrap">
+<div style="flex: 1 1 300px; padding: 20px 24px; border-right: 1px solid #2A2A2A; display: flex; flex-direction: column; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.16em; color: #858585">AVANT</span><p style="margin: 0; font-size: 17px; line-height: 1.5; color: #AAAAAA"><s>Il couvre la prospection, la négociation et le closing.</s></p></div>
+<div style="flex: 1 1 300px; padding: 20px 24px; background: #0A0A0A; display: flex; flex-direction: column; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.16em; color: #E8FF47">APRÈS</span><p style="margin: 0; font-size: 17px; line-height: 1.5; color: #FFFFFF; font-weight: 600">Chaque semaine sans méthode, ce sont des devis qui dorment dans ta boîte d'envoi.</p></div>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; padding: 14px 24px; border-top: 1px solid #2A2A2A"><span style="padding: 5px 9px; border-radius: 4px; background: rgba(232,255,71,0.12); color: #E8FF47; font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600">Aversion à la perte</span><span style="padding: 5px 9px; border-radius: 4px; border: 1px solid #2A2A2A; color: #AAAAAA; font-family: 'JetBrains Mono', monospace; font-size: 12px">Kahneman &amp; Tversky, 1979</span></div>
+</article>
+
+<article style="border: 1px solid #2A2A2A; border-radius: 8px; background: #111111; overflow: hidden">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 16px 24px; border-bottom: 1px solid #2A2A2A"><span style="display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: 16px"><span style="font-family: 'JetBrains Mono', monospace; color: #E8FF47">03</span>Ton CTA demande trop d'effort</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #858585">CTA</span></div>
+<div style="display: flex; flex-wrap: wrap">
+<div style="flex: 1 1 300px; padding: 20px 24px; border-right: 1px solid #2A2A2A; display: flex; flex-direction: column; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.16em; color: #858585">AVANT</span><p style="margin: 0; font-size: 17px; line-height: 1.5; color: #AAAAAA"><s>Si ça t'intéresse, n'hésite pas à me répondre.</s></p></div>
+<div style="flex: 1 1 300px; padding: 20px 24px; background: #0A0A0A; display: flex; flex-direction: column; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.16em; color: #E8FF47">APRÈS</span><p style="margin: 0; font-size: 17px; line-height: 1.5; color: #FFFFFF; font-weight: 600">Réponds juste « oui » et je t'envoie le programme ce soir.</p></div>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; padding: 14px 24px; border-top: 1px solid #2A2A2A"><span style="padding: 5px 9px; border-radius: 4px; background: rgba(232,255,71,0.12); color: #E8FF47; font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600">Pied dans la porte</span><span style="padding: 5px 9px; border-radius: 4px; border: 1px solid #2A2A2A; color: #AAAAAA; font-family: 'JetBrains Mono', monospace; font-size: 12px">Freedman &amp; Fraser, 1966</span></div>
+</article>
+</div>
+
+<div style="border: 1px solid #2A2A2A; border-radius: 8px; background: #0A0A0A; padding: 40px; display: flex; flex-direction: column; align-items: flex-start; gap: 18px">
+<div style="display: flex; align-items: center; gap: 10px; font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #AAAAAA"><span style="width: 8px; height: 8px; border-radius: 999px; background: #E8FF47"></span>Analyse complète</div>
+<p style="margin: 0; font-size: 34px; line-height: 1.1; letter-spacing: -0.035em; font-weight: 800; max-width: 640px">Tu as vu 3 problèmes.<br><span style="color: #858585">L'analyse complète en trouve sur <span style="color: #E8FF47">7</span> dimensions.</span></p>
+<p style="margin: 0; font-size: 16px; line-height: 1.65; color: #AAAAAA; max-width: 560px">Charge cognitive, preuve, urgence, émotion. Plus la réécriture de l'email entier, phrase par phrase.</p>
+<a href="#" style="display: inline-flex; align-items: center; height: 52px; padding: 0 26px; border-radius: 999px; background: #E8FF47; color: #000000; text-decoration: none; font-weight: 700; font-size: 16px">Voir l'analyse complète →</a>
+<span style="font-size: 13px; color: #858585">Plan Free · sans carte bancaire</span>
+</div>
+</section>
+
+<footer style="margin-top: 128px; border-top: 1px solid #2A2A2A">
+<div style="max-width: 1200px; margin: 0 auto; padding: 48px 24px 32px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px">
+<div style="display: flex; flex-direction: column; gap: 10px"><span style="display: flex; align-items: center; gap: 8px; font-weight: 800; font-size: 18px; letter-spacing: -0.03em"><span style="width: 10px; height: 10px; border-radius: 999px; background: #E8FF47"></span>NeuroCopy</span><span style="font-size: 15px; color: #AAAAAA">NeuroCopy · Le copy parle au cerveau, pas à l'œil.</span></div>
+<span style="align-self: flex-end; font-size: 13px; color: #858585">© 2026 NeuroCopy · <a href="#" style="color: #858585">Mentions légales</a> · <a href="#" style="color: #858585">Confidentialité</a></span>
+</div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":3300}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

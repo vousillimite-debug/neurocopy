@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Connexion et création de compte — mobile</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#000000}
+a{color:#E8FF47}a:hover{color:#F4FFA3}
+:focus-visible{outline:2px solid #E8FF47;outline-offset:3px}
+input[type=checkbox]{accent-color:#E8FF47}
+</style>
+</helmet>
+<div style="width: 390px; min-height: 1900px; background: #000000; color: #FFFFFF; font-family: Inter, system-ui, sans-serif; overflow: hidden">
+
+<header style="padding: 16px"><a href="#" style="display: inline-flex; align-items: center; gap: 8px; color: #FFFFFF; text-decoration: none; font-weight: 800; font-size: 17px"><span style="width: 9px; height: 9px; border-radius: 999px; background: #E8FF47"></span>NeuroCopy</a></header>
+
+<section aria-labelledby="m-co" style="padding: 32px 16px 0; display: flex; flex-direction: column; gap: 18px">
+<h1 id="m-co" style="margin: 0; font-size: 38px; line-height: 1; letter-spacing: -0.045em; font-weight: 800">Content de te revoir.<br><span style="color: #858585">Ton copy <span style="color: #E8FF47">t'attend.</span></span></h1>
+<form style="display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; flex-direction: column; gap: 8px"><label for="mc-email" style="font-size: 14px; font-weight: 600">Email</label><input id="mc-email" type="email" autocomplete="email" style="height: 52px; padding: 0 14px; border-radius: 8px; border: 1px solid #474747; background: #111111; color: #FFFFFF; font-family: inherit; font-size: 16px"></div>
+<div style="display: flex; flex-direction: column; gap: 8px"><label for="mc-mdp" style="font-size: 14px; font-weight: 600">Mot de passe</label><input id="mc-mdp" type="password" autocomplete="current-password" style="height: 52px; padding: 0 14px; border-radius: 8px; border: 1px solid #474747; background: #111111; color: #FFFFFF; font-family: inherit; font-size: 16px"><a href="#" style="align-self: flex-end; min-height: 44px; display: flex; align-items: center; font-size: 13px; color: #AAAAAA">Mot de passe oublié ?</a></div>
+<button type="submit" style="height: 56px; border-radius: 999px; border: 0; background: #E8FF47; color: #000000; font-family: inherit; font-weight: 700; font-size: 16px">Se connecter →</button>
+<button type="button" style="height: 52px; border-radius: 999px; border: 1px solid #474747; background: transparent; color: #FFFFFF; font-family: inherit; font-weight: 600; font-size: 15px">Recevoir un lien par email</button>
+<p style="margin: 0; font-size: 14px; color: #AAAAAA; text-align: center">Pas encore de compte ? <a href="#" style="font-weight: 600">Créer mon compte</a></p>
+</form>
+</section>
+
+<div style="margin-top: 56px; padding: 12px 16px; border-top: 1px dashed #474747; border-bottom: 1px dashed #474747; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.16em; color: #858585">ÉCRAN SUIVANT · CRÉATION DE COMPTE</div>
+
+<section aria-labelledby="m-in" style="padding: 32px 16px 48px; display: flex; flex-direction: column; gap: 18px">
+<h2 id="m-in" style="margin: 0; font-size: 38px; line-height: 1; letter-spacing: -0.045em; font-weight: 800">Crée ton compte.<br><span style="color: #858585">Ton prochain texte <span style="color: #E8FF47">mérite</span> mieux.</span></h2>
+<span style="font-size: 14px; color: #AAAAAA">Plan Free, sans carte bancaire.</span>
+<form style="display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; flex-direction: column; gap: 8px"><label for="mi-prenom" style="font-size: 14px; font-weight: 600">Prénom</label><input id="mi-prenom" type="text" autocomplete="given-name" style="height: 52px; padding: 0 14px; border-radius: 8px; border: 1px solid #474747; background: #111111; color: #FFFFFF; font-family: inherit; font-size: 16px"></div>
+<div style="display: flex; flex-direction: column; gap: 8px"><label for="mi-email" style="font-size: 14px; font-weight: 600">Email</label><input id="mi-email" type="email" autocomplete="email" style="height: 52px; padding: 0 14px; border-radius: 8px; border: 1px solid #474747; background: #111111; color: #FFFFFF; font-family: inherit; font-size: 16px"></div>
+<div style="display: flex; flex-direction: column; gap: 8px"><label for="mi-mdp" style="font-size: 14px; font-weight: 600">Mot de passe</label><input id="mi-mdp" type="password" autocomplete="new-password" aria-describedby="mi-aide" style="height: 52px; padding: 0 14px; border-radius: 8px; border: 1px solid #474747; background: #111111; color: #FFFFFF; font-family: inherit; font-size: 16px"><span id="mi-aide" style="font-size: 13px; color: #AAAAAA">8 caractères minimum.</span></div>
+<label style="display: flex; align-items: flex-start; gap: 12px; font-size: 14px; line-height: 1.5; color: #D6D6D6"><input type="checkbox" required="required" style="width: 22px; height: 22px; margin: 0; flex: none"><span>J'accepte les <a href="#">conditions</a> et la <a href="#">politique de confidentialité</a>.</span></label>
+<label style="display: flex; align-items: flex-start; gap: 12px; font-size: 14px; line-height: 1.5; color: #AAAAAA"><input type="checkbox" style="width: 22px; height: 22px; margin: 0; flex: none"><span>Recevoir les nouveaux articles. Facultatif.</span></label>
+<button type="submit" style="height: 56px; border-radius: 999px; border: 0; background: #E8FF47; color: #000000; font-family: inherit; font-weight: 700; font-size: 16px">Créer mon compte gratuit →</button>
+<p style="margin: 0; font-size: 14px; color: #AAAAAA; text-align: center">Déjà un compte ? <a href="#" style="font-weight: 600">Se connecter</a></p>
+</form>
+</section>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":1900}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>
