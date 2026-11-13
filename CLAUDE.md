@@ -6,7 +6,7 @@ Propriétaire : Renaud. **Toujours lui répondre en français, simplement, sans 
 ## Environnement
 - Windows géré par l'entreprise, **pas de droits admin** : ne jamais tenter d'installation admin/globale système.
 - Terminal : PowerShell dans VS Code. Node 20 (via fnm), npm 10, git disponibles. Pas de pnpm, pas de Python.
-- **Réseau** : l'antivirus Kaspersky intercepte le HTTPS. Pour npm/npx, définir `NODE_EXTRA_CA_CERTS=C:\Users\rczerwiec\.certs\kaspersky-root.pem` (certificat exporté du magasin Windows). Ne jamais désactiver `strict-ssl`.
+- **Réseau** : l'antivirus Kaspersky intercepte le HTTPS. Pour npm/npx, définir `NODE_EXTRA_CA_CERTS=%USERPROFILE%\.certs\kaspersky-root.pem` (certificat exporté du magasin Windows). Ne jamais désactiver `strict-ssl`.
 - Playwright : Chromium headless installé dans le profil utilisateur. Captures : `npm run build && npm start` puis `npm run screenshots` (sortie dans `screenshots/`, ignoré par git). Repli possible : Edge (`channel: "msedge"`).
 - Git local uniquement. Aucun commit sans demande, aucun push sans feu vert.
 
