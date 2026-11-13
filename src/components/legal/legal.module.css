@@ -1,0 +1,28 @@
+.wrap {
+  max-width: calc(var(--nc-measure) + 2 * var(--nc-gutter));
+  margin: 0 auto;
+  padding: var(--nc-s-24) var(--nc-gutter) var(--nc-s-32);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--nc-s-6);
+}
+.h1 {
+  margin: 0;
+  font-size: var(--nc-fs-h1);
+  line-height: var(--nc-lh-title);
+  letter-spacing: var(--nc-ls-title);
+  font-weight: var(--nc-fw-black);
+}
+.text {
+  margin: 0;
+  font-size: var(--nc-fs-lead);
+  line-height: var(--nc-lh-body);
+  color: var(--nc-text-2);
+}
+
+@media (max-width: 767px) {
+  .wrap {
+    padding: var(--nc-s-16) var(--nc-gutter) var(--nc-s-24);
+  }
+}

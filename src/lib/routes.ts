@@ -1,14 +1,16 @@
 /**
  * Adresses internes du site, centralisées ici pour pouvoir les changer en un seul endroit.
- * Les pages marquées « à créer » arrivent aux étapes suivantes.
+ * Les pages /analyser, /corriger, /rediger, /comparer (app) arrivent à l'étape 5.
  */
 export const routes = {
   home: "/",
   methode: "/#methode",
   demo: "/#demo",
-  tarifs: "/tarifs", // à créer (étape 3)
-  connexion: "/connexion", // à créer (étape 3, statique)
-  inscription: "/inscription", // à créer (étape 3, statique)
+  /** Section « Les 5 modules » de la homepage : cible des liens Produit tant que l'app n'existe pas. */
+  modules: "/#modules",
+  tarifs: "/tarifs",
+  connexion: "/connexion", // statique, sans authentification
+  inscription: "/inscription", // statique, sans authentification
   outils: {
     analyseurEmail: "/analyser-email",
     testeurAccroche: "/testeur-accroche",
@@ -31,9 +33,10 @@ export const routes = {
     pagesDeVente: "/direct-response-copywriting",
   },
   legal: {
-    mentions: "/mentions-legales", // à créer
-    confidentialite: "/confidentialite", // à créer
-    cgv: "/cgv", // à créer
+    mentions: "/mentions-legales", // provisoire
+    confidentialite: "/confidentialite", // provisoire
+    /** Une seule page : conditions générales d'utilisation ET de vente (décision de Renaud). */
+    conditions: "/cgv", // provisoire
   },
 } as const;
 

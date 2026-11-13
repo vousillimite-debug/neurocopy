@@ -1,0 +1,303 @@
+/* Connexion / inscription — valeurs de design/Connexion.dc.html, Inscription.dc.html (1440) et Auth-mobile.dc.html (390). */
+
+.layout {
+  /* Le bloc remplit l'écran entre la barre du logo et le pied de page, comme la maquette. */
+  min-height: calc(100vh - 130px);
+  max-width: calc(1100px);
+  margin: 0 auto;
+  padding: var(--nc-s-12) var(--nc-gutter) var(--nc-s-24);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--nc-s-16);
+  line-height: normal;
+}
+.layoutSignup {
+  padding: var(--nc-s-10) var(--nc-gutter) 80px;
+}
+.intro {
+  flex: 1 1 420px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--nc-s-5);
+}
+.h1 {
+  margin: 0;
+  font-size: 64px;
+  line-height: 0.98;
+  letter-spacing: var(--nc-ls-title);
+  font-weight: var(--nc-fw-black);
+}
+.second {
+  color: var(--nc-text-3);
+}
+.perks {
+  margin: var(--nc-s-2) 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--nc-s-3);
+  font-size: var(--nc-fs-body);
+  color: var(--nc-text-article);
+}
+.perks li {
+  display: flex;
+  gap: 10px;
+}
+.tick {
+  color: var(--nc-accent);
+}
+.perksShort {
+  margin: 0;
+  font-size: var(--nc-fs-small);
+  color: var(--nc-text-2);
+}
+.selected {
+  margin: 0;
+  padding: var(--nc-s-3) var(--nc-s-4);
+  border: 1px solid var(--nc-border);
+  border-radius: var(--nc-r-card);
+  background: var(--nc-bg-alt);
+  font-size: var(--nc-fs-small);
+  line-height: 1.5;
+  color: var(--nc-text-2);
+}
+.selected strong {
+  color: var(--nc-accent);
+}
+
+/* ── Carte ─────────────────────────────────────── */
+.card {
+  flex: 1 1 400px;
+  /* 440 px de contenu + marges et bordures, comme la maquette (en content-box) */
+  max-width: calc(440px + 2 * var(--nc-s-8) + 2px);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: var(--nc-s-8);
+  border: 1px solid var(--nc-border);
+  border-radius: var(--nc-r-card);
+  background: var(--nc-card);
+}
+.pw,
+.magic {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Variante « lien par email » : visible quand l'URL se termine par #lien-email (sans JavaScript). */
+.magic {
+  display: none;
+}
+.magic:target {
+  display: flex;
+}
+.card:has(.magic:target) .pw {
+  display: none;
+}
+.magicTitle {
+  margin: 0;
+  font-size: var(--nc-fs-lead);
+  font-weight: var(--nc-fw-bold);
+}
+.magicText {
+  margin: -8px 0 0;
+  font-size: var(--nc-fs-small);
+  line-height: 1.5;
+  color: var(--nc-text-2);
+}
+.back {
+  align-self: flex-start;
+  font-size: var(--nc-fs-small);
+  color: var(--nc-text-2);
+}
+
+/* ── Champs ────────────────────────────────────── */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--nc-s-2);
+}
+.labelRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.label {
+  font-size: var(--nc-fs-small);
+  font-weight: var(--nc-fw-semibold);
+}
+.aside {
+  font-size: 13px;
+}
+.aside a {
+  color: var(--nc-text-2);
+}
+.input {
+  height: var(--nc-control-h);
+  padding: 0 var(--nc-s-4);
+  border: 1px solid var(--nc-border-strong);
+  border-radius: var(--nc-r-card);
+  background: var(--nc-bg);
+  color: var(--nc-text);
+  font-family: inherit;
+  font-size: var(--nc-fs-body);
+}
+.input::placeholder {
+  color: var(--nc-text-3);
+}
+.input:focus-visible {
+  outline: var(--nc-focus);
+  outline-offset: 0;
+  border-color: transparent;
+}
+.help {
+  font-size: 13px;
+  color: var(--nc-text-2);
+}
+.check {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--nc-s-3);
+  font-size: var(--nc-fs-small);
+  line-height: 1.5;
+  color: var(--nc-text-article);
+}
+.check label {
+  cursor: pointer;
+}
+.checkMuted {
+  color: var(--nc-text-2);
+}
+.checkbox {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  margin: 1px 0 0;
+  accent-color: var(--nc-accent);
+}
+
+/* ── Actions ───────────────────────────────────── */
+.submit,
+.secondary {
+  width: 100%;
+}
+.submit {
+  margin-top: 6px;
+}
+.soon {
+  margin: -8px 0 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--nc-text-2);
+}
+.soonTag {
+  margin-right: 6px;
+  padding: 2px 6px;
+  border-radius: var(--nc-r-badge);
+  background: var(--nc-accent-soft);
+  color: var(--nc-accent);
+  font-family: var(--nc-mono);
+  font-size: 11px;
+  font-weight: var(--nc-fw-semibold);
+}
+.or {
+  display: flex;
+  align-items: center;
+  gap: var(--nc-s-3);
+  font-family: var(--nc-mono);
+  font-size: 11px;
+  color: var(--nc-text-3);
+}
+.or span {
+  flex: 1;
+  height: 1px;
+  background: var(--nc-border);
+}
+.switch {
+  margin: 6px 0 0;
+  font-size: var(--nc-fs-small);
+  color: var(--nc-text-2);
+  text-align: center;
+}
+.switch a {
+  font-weight: var(--nc-fw-semibold);
+}
+
+/* ══ Mobile (< 768 px) ═════════════════════════════ */
+@media (max-width: 767px) {
+  .layout,
+  .layoutSignup {
+    min-height: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 18px;
+    padding: var(--nc-s-8) var(--nc-gutter) var(--nc-s-12);
+  }
+  .intro {
+    flex: none;
+    gap: 18px;
+  }
+  .h1 {
+    font-size: 38px;
+    line-height: 1;
+  }
+  .card {
+    flex: none;
+    max-width: none;
+    gap: var(--nc-s-4);
+    padding: 0;
+    border: 0;
+    background: none;
+  }
+  .pw,
+  .magic {
+    gap: var(--nc-s-4);
+  }
+  .input {
+    padding: 0 14px;
+    background: var(--nc-card);
+  }
+  /* « Mot de passe oublié ? » passe sous le champ */
+  .labelRow {
+    display: contents;
+  }
+  .aside {
+    order: 3;
+    align-self: flex-end;
+    display: flex;
+    align-items: center;
+    min-height: var(--nc-control-h-sm);
+  }
+  .checkbox {
+    width: 22px;
+    height: 22px;
+    margin: 0;
+  }
+  .submit {
+    margin-top: 0;
+    min-height: var(--nc-control-h-lg);
+  }
+  .soon {
+    margin-top: -6px;
+  }
+  .switch {
+    margin: 0;
+  }
+}
+
+/* ══ Affichage desktop / mobile (en dernier) ══ */
+.mOnlyBlock {
+  display: none;
+}
+@media (max-width: 767px) {
+  .dOnly,
+  .dOnlyFlex {
+    display: none;
+  }
+  .mOnlyBlock {
+    display: block;
+  }
+}

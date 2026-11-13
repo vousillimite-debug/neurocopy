@@ -63,6 +63,21 @@ const CASES = [
   ],
   ["tarifs-desktop", "/tarifs", "Tarifs.dc.html", 1440, 1900, false],
   ["tarifs-mobile", "/tarifs", "Tarifs-mobile.dc.html", 390, 1600, false],
+  ["connexion-desktop", "/connexion", "Connexion.dc.html", 1440, 1000, false],
+  ["inscription-desktop", "/inscription", "Inscription.dc.html", 1440, 1100, false],
+  [
+    "auth-mobile",
+    {
+      stack: [
+        { path: "/connexion", selector: "main", label: "CONNEXION" },
+        { path: "/inscription", selector: "main", label: "ÉCRAN SUIVANT · CRÉATION DE COMPTE" },
+      ],
+    },
+    "Auth-mobile.dc.html",
+    390,
+    1800,
+    false,
+  ],
   // Pas de maquette mobile de l'analyseur d'email : comparé au testeur d'accroche mobile.
   ["outil-email-mobile", "/analyser-email?etat=resultat", "Outil-mobile.dc.html", 390, 1800, true],
 ];
@@ -92,7 +107,7 @@ async function shot(url, w, js) {
 async function stack(items, w) {
   const parts = [];
   for (const it of items) {
-    const { ctx, p } = await open(base + it.path, w, true);
+    const { ctx, p } = await open(base + it.path, w, it.js ?? true);
     const buf = await p.locator(it.selector).screenshot();
     parts.push({ label: it.label, b64: buf.toString("base64") });
     await ctx.close();

@@ -284,7 +284,8 @@ export default function HomePage() {
       {/* Les 5 modules */}
       <Block
         alt
-        titleId="modules"
+        id="modules"
+        titleId="modules-titre"
         eyebrow="Les 5 modules"
         title={
           <>

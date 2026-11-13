@@ -1,6 +1,6 @@
 /**
  * Plans et prix, repris des maquettes (Home, Tarifs). Source unique pour la homepage et /tarifs.
- * Valeurs PROVISOIRES : rien n'est publié avant les CGV et Stripe.
+ * Valeurs PROVISOIRES : rien n'est publié avant les conditions générales (CGU + CGV, page /cgv) et Stripe.
  * Placeholders à garder tels quels tant que Renaud ne les a pas fixés : [N], [−X %], [RÈGLE DE DÉCOMPTE À CONFIRMER].
  */
 export type PlanId = "free" | "solo" | "growth" | "agency";

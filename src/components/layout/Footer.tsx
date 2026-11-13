@@ -7,11 +7,12 @@ import styles from "./Footer.module.css";
 const COLUMNS = [
   {
     title: "PRODUIT",
+    // Étape 5 : remplacer routes.modules par routes.app.* quand l'app existera (évite les 404 d'ici là).
     links: [
-      { label: "Analyser", href: routes.app.analyser },
-      { label: "Corriger", href: routes.app.corriger },
-      { label: "Rédiger", href: routes.app.rediger },
-      { label: "Comparer", href: routes.app.comparer },
+      { label: "Analyser", href: routes.modules },
+      { label: "Corriger", href: routes.modules },
+      { label: "Rédiger", href: routes.modules },
+      { label: "Comparer", href: routes.modules },
       { label: "Tarifs", href: routes.tarifs },
     ],
   },
@@ -36,7 +37,7 @@ const COLUMNS = [
 const LEGAL = [
   { label: "Mentions légales", href: routes.legal.mentions },
   { label: "Confidentialité", href: routes.legal.confidentialite },
-  { label: "CGV", href: routes.legal.cgv },
+  { label: "Conditions générales", href: routes.legal.conditions },
 ];
 
 type Props = {

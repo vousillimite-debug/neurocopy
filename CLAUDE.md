@@ -96,6 +96,11 @@ Propriétaire : Renaud. **Toujours lui répondre en français, simplement, sans 
 - Contrôle visuel des outils : `node scripts/compare.mjs http://localhost:3000 outil` (états empilés comme les maquettes).
 - Outils validés et commités. Lead du testeur d'accroche : « Sans inscription, sans carte bancaire. »
 - Tarifs (`src/app/tarifs`) : bascule mensuel/annuel **sans JavaScript** (boutons radio + `:has()`, sélection par `value` car les CSS Modules renomment les id). Prix annuels « [N] € » tant que la remise n'est pas fixée (`annualMonthlyPrice: null`). Liens : `/inscription?plan=…&periode=…` (`signupFor`). Tableau comparatif et cartes alimentés par `src/lib/plans.ts`. Placeholders conservés : [N], [−X %], [RÈGLE DE DÉCOMPTE À CONFIRMER], [REMISE À CONFIRMER].
+- Tarifs validés et commités (carte quota : « Tester une accroche, sans compte »).
+- Connexion / inscription (`src/app/connexion`, `src/app/inscription`, `src/components/auth`) : **aucun envoi possible** — pas de `<form>`, pas d'attribut `name`, boutons désactivés + mention « Bientôt disponible ». Variante « lien par email » : ancre `#lien-email` + `:target` (sans JavaScript). Rappel du plan choisi (`?plan=&periode=`) lu dans le navigateur, valeurs inconnues ignorées. Pages non indexées.
+- Pages légales provisoires `/mentions-legales`, `/confidentialite`, `/cgv` (« Page en cours de rédaction », non indexées). `/cgv` = **une seule page « Conditions générales d'utilisation et de vente »** (`routes.legal.conditions`, libellé footer « Conditions générales »).
+- Connexion / inscription validées : textes de la connexion par lien, « Mot de passe oublié ? » → connexion par lien, Produit → `/#modules`. **Étape 3 terminée** (commit « Étape 3d »).
+- Footer, colonne Produit : pointe vers `/#modules` tant que l'app n'existe pas (aucun lien du site en 404).
 - Shell : ne jamais mettre d'accents graves (backticks) dans un `node -e "…"` en Bash (exécutés comme commandes). Utiliser Edit/Write.
 
 - Supabase : `supabase/migrations/20261112000000_pages.sql` (RLS : lecture des pages publiées seulement). Import : `node scripts/import-pages.mjs` (simulation) puis `--apply` avec `.env.local`.
