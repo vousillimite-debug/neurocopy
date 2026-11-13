@@ -42,6 +42,11 @@ Propriétaire : Renaud. **Toujours lui répondre en français, simplement, sans 
 4. SEO technique : metadata, canonical, JSON-LD, sitemap, robots, redirections.
 5. Plus tard, après validation : auth, Stripe, outils branchés sur l'API Anthropic (serveur), app payante.
 
+## Déploiement (Vercel, prévisualisation privée)
+- Remote : `origin` = https://github.com/vousillimite-debug/neurocopy.git (dépôt privé). **Aucun push sans accord explicite de Renaud.**
+- Indexation : `INDEXING_ALLOWED` (`src/lib/site.ts`) = `VERCEL_ENV === "production"` **et** `ALLOW_INDEXING === "true"`. Sinon meta robots noindex (layout) + en-tête `X-Robots-Tag: noindex, nofollow` (`next.config.ts`). Lu au build : changer la variable demande un redéploiement. Ne poser `ALLOW_INDEXING=true` que le jour de la mise en ligne, domaine connecté.
+- Build vérifié depuis un clone propre (`npm ci && npm run build`). 4 avertissements CSS connus sur `::scroll-marker` (carrousel mobile), sans effet.
+
 ## Prérequis de l'étape 5 (avant de brancher l'API Anthropic)
 - **Les compteurs de limitation de débit en mémoire ne fonctionnent pas sur Vercel** (serverless : chaque instance a sa propre mémoire). Il faut d'abord un **stockage partagé** (Upstash Redis ou Supabase) derrière `rateLimit()` (`src/lib/server/rate-limit.ts`).
 - **Renaud doit fixer un plafond de dépense mensuel sur la clé API Anthropic** avant tout branchement.
