@@ -4,6 +4,15 @@
  */
 export const SITE_URL = (process.env.SITE_URL ?? "https://neurocopy.fr").replace(/\/+$/, "");
 
+/**
+ * Indexation par les moteurs : autorisée UNIQUEMENT si les deux conditions sont réunies.
+ * - VERCEL_ENV === "production" (posée par Vercel ; absente en local, « preview » sur les prévisualisations) ;
+ * - ALLOW_INDEXING === "true" (à poser par Renaud le jour de la mise en ligne, domaine connecté).
+ * Sinon : balise <meta name="robots" content="noindex, nofollow"> + en-tête X-Robots-Tag sur toutes les réponses.
+ * Lu au build (pages statiques) : changer ALLOW_INDEXING demande un nouveau déploiement.
+ */
+export const INDEXING_ALLOWED = process.env.VERCEL_ENV === "production" && process.env.ALLOW_INDEXING === "true";
+
 export const SITE_NAME = "NeuroCopy";
 export const SITE_TAGLINE = "Le copy parle au cerveau, pas à l'œil.";
 

@@ -16,11 +16,14 @@ import "@fontsource/jetbrains-mono/600.css";
 import "../../design/neurocopy-tokens.css";
 import "@/styles/globals.css";
 
-import { SITE_NAME, SITE_URL } from "@/lib/site";
+import { INDEXING_ALLOWED, SITE_NAME, SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: { default: SITE_NAME, template: `%s | ${SITE_NAME}` },
+  // Hors production autorisée : aucune page indexable. Les pages qui fixent leur propre `robots`
+  // le font toujours en noindex (connexion, pages légales…), donc rien ne peut redevenir indexable ici.
+  robots: INDEXING_ALLOWED ? undefined : { index: false, follow: false },
 };
 
 export const viewport: Viewport = {
